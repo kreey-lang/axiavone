@@ -795,7 +795,10 @@
       pesan += `\nMohon info ketersediaannya. Terima kasih!`;
       window.open(`https://wa.me/${CAFE_CONFIG.nomorWA}?text=${encodeURIComponent(pesan)}`, "_blank");
     }
-
+    function toggleMobileMenu() {
+      document.getElementById("mobile-nav-drawer").classList.toggle("hidden");
+    }
+      
     document.getElementById("res-tanggal").valueAsDate = new Date();
     updateLiveStatus();
     renderCategories();

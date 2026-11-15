@@ -3,42 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Le Parla - Maison & Café | Pangkal Pinang</title>
-  <meta name="description" content="Ruang hangat untuk kopi spesialti, fresh bakery, dan sajian rumah bernuansa Mediterania di Pangkal Pinang." />
-  
-  <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+  <title>Le Parla — Maison & Café | Pangkal Pinang</title>
+  <meta name="description" content="Ruang hangat untuk kopi spesialti, fresh viennoiserie, dan sajian rumah bernuansa Mediterania di jantung Pangkal Pinang." />
+
+  <!-- Editorial Luxury Fonts: Cormorant Garamond & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Tailwind CSS CDN -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            cream: '#FAF7F2',
-            sand: '#F3ECE1',
-            espresso: '#2C1E16',
-            terracotta: '#C26D4A',
-            terracottaDark: '#A85837',
-            sage: '#5C6B54',
-            taupe: '#6E6259',
-            borderWarm: '#E6DDD0'
+            linen: '#FBF9F5',
+            travertine: '#F2ECE1',
+            espresso: '#1C1410',
+            mocha: '#2B201A',
+            terracotta: '#B85D3B',
+            terracottaHover: '#9E4B2C',
+            gold: '#C5A059',
+            olive: '#4B5D46',
+            taupe: '#6E635B',
+            hairline: '#E5DDD0'
           },
           fontFamily: {
-            serif: ['"Playfair Display"', 'serif'],
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
             sans: ['"Plus Jakarta Sans"', 'sans-serif'],
           }
         }
       }
     }
   </script>
+
   <style>
     body {
-      background-color: #FAF7F2;
-      color: #2C1E16;
+      background-color: #FBF9F5;
+      color: #1C1410;
       font-family: 'Plus Jakarta Sans', sans-serif;
     }
     .no-scrollbar::-webkit-scrollbar {
@@ -48,322 +51,329 @@
       -ms-overflow-style: none;
       scrollbar-width: none;
     }
+    @keyframes slowZoom {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.06); }
+      100% { transform: scale(1); }
+    }
+    .animate-kenburns {
+      animation: slowZoom 24s ease-in-out infinite;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-up {
+      animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
   </style>
 </head>
 <body class="antialiased selection:bg-terracotta selection:text-white pb-24">
 
-  <!-- ================= NAVBAR ================= -->
-  <header class="sticky top-0 z-40 bg-cream/95 backdrop-blur-md border-b border-borderWarm">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="#beranda" class="flex flex-col">
-        <span class="font-serif text-xl sm:text-2xl font-bold tracking-wider text-espresso leading-none">LE PARLA</span>
-        <span class="text-[11px] uppercase tracking-[0.22em] text-taupe mt-0.5">Maison & Café</span>
+  <!-- ================= FLOATING GLASS NAVBAR ================= -->
+  <header class="sticky top-0 z-40 bg-linen/90 backdrop-blur-md border-b border-hairline transition-all">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+      <!-- Brand Crest & Title -->
+      <a href="#beranda" class="flex items-center gap-3 group">
+        <div class="w-9 h-9 rounded-full border border-gold/60 bg-espresso text-gold flex items-center justify-center font-serif text-base font-bold tracking-wider shadow-sm">
+          LP
+        </div>
+        <div class="flex flex-col">
+          <span class="font-serif text-xl sm:text-2xl font-bold tracking-[0.14em] text-espresso leading-none">LE PARLA</span>
+          <span class="text-[10px] uppercase tracking-[0.26em] text-taupe mt-0.5">Maison & Café</span>
+        </div>
       </a>
 
-      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-taupe">
-        <a href="#tentang" class="hover:text-espresso transition">Tentang Kami</a>
-        <a href="#menu" class="hover:text-espresso transition">Katalog Menu</a>
-        <a href="#reservasi" class="hover:text-espresso transition">Reservasi Acara</a>
-        <a href="#lokasi" class="hover:text-espresso transition">Lokasi & Jam</a>
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-8 text-xs uppercase tracking-[0.15em] font-semibold text-taupe">
+        <a href="#filosofi" class="hover:text-terracotta transition">The Estate</a>
+        <a href="#menu" class="hover:text-terracotta transition">Katalog Menu</a>
+        <a href="#ulasan" class="hover:text-terracotta transition">Ulasan</a>
+        <a href="#reservasi" class="hover:text-terracotta transition">Reservasi</a>
+        <a href="#lokasi" class="hover:text-terracotta transition">Lokasi</a>
       </nav>
 
-      <button onclick="openCart()" class="relative flex items-center gap-2 bg-espresso text-cream px-3.5 py-2 rounded-full text-xs sm:text-sm font-semibold shadow-sm hover:bg-espresso/90 transition">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-terracotta" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <!-- Cart Trigger Button -->
+      <button onclick="openCart()" class="relative flex items-center gap-2.5 bg-espresso text-linen px-4 py-2 rounded-full text-xs font-semibold tracking-wide shadow-md hover:bg-mocha transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
           <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
         </svg>
         <span>Pesanan</span>
-        <span id="nav-cart-badge" class="bg-terracotta text-white text-[11px] font-bold px-1.5 py-0.5 rounded-full">0</span>
+        <span id="nav-cart-badge" class="bg-terracotta text-white text-[11px] font-bold px-1.5 py-0.5 rounded-full min-w-[20px] text-center">0</span>
       </button>
     </div>
   </header>
 
-  <!-- ================= HERO SECTION ================= -->
-  <section id="beranda" class="relative overflow-hidden">
-    <div class="relative min-h-[520px] sm:min-h-[580px] flex items-center">
-      <!-- Background Image -->
-      <img 
-        src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1400&q=80" 
-        alt="Suasana Le Parla Maison & Café" 
-        class="absolute inset-0 w-full h-full object-cover"
+  <!-- ================= LUXURY EDITORIAL HERO ================= -->
+  <section id="beranda" class="relative overflow-hidden bg-espresso">
+    <div class="relative min-h-[580px] sm:min-h-[640px] flex items-center">
+      <!-- Ambient Zoom Background -->
+      <img
+        src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1600&q=85"
+        alt="Interior Le Parla Maison & Café"
+        class="absolute inset-0 w-full h-full object-cover opacity-65 animate-kenburns"
       />
-      <!-- Gradient Overlay -->
-      <div class="absolute inset-0 bg-gradient-to-t from-espresso via-espresso/75 to-espresso/45"></div>
+      <!-- Multi-layered Atmospheric Gradient -->
+      <div class="absolute inset-0 bg-gradient-to-t from-espresso via-espresso/75 to-espresso/30"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-espresso/85 via-espresso/40 to-transparent"></div>
 
-      <div class="relative z-10 max-w-6xl mx-auto px-4 py-14 sm:py-20 text-cream w-full">
-        <div class="inline-flex items-center gap-2 bg-cream/15 backdrop-blur-md border border-cream/25 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium mb-5">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span>Buka Setiap Hari • Tutup Pukul 22.00 WIB</span>
+      <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24 text-linen w-full animate-fade-up">
+        <!-- Real-Time Operational Pill -->
+        <div id="live-status-pill" class="inline-flex items-center gap-2.5 bg-white/10 backdrop-blur-md border border-gold/35 px-4 py-1.5 rounded-full text-xs font-medium text-linen mb-6">
+          <span id="live-status-dot" class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span id="live-status-text">Buka Setiap Hari • 10.00 – 22.00 WIB</span>
         </div>
 
-        <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-semibold leading-tight max-w-3xl">
-          Ruang Hangat untuk Kopi Spesialti, Sajian Rumah, dan Cerita Bermakna
+        <div class="text-gold text-xs sm:text-sm uppercase tracking-[0.28em] font-semibold mb-3">
+          Pangkal Pinang • Bangka Belitung
+        </div>
+
+        <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-semibold leading-[1.08] max-w-3xl tracking-tight">
+          Seni Menikmati Kopi, <span class="italic font-normal text-gold">Sajian Rumah</span>, dan Ruang Penuh Cerita.
         </h1>
 
-        <p class="mt-4 text-sm sm:text-base text-cream/85 max-w-xl leading-relaxed">
-          Nikmati racikan <em>specialty coffee</em>, <em>fresh bakery</em>, dan hidangan hangat dalam suasana bernuansa Mediterania di jantung Pangkal Pinang.
+        <p class="mt-5 text-sm sm:text-base text-linen/80 max-w-xl leading-relaxed font-normal">
+          Sebuah rumah singgah bernuansa Mediterania di jantung kota. Tempat racikan <em>specialty coffee</em> dan <em>artisan bakery</em> berpadu dengan kehangatan percakapan.
         </p>
 
-        <div class="mt-7 flex flex-col sm:flex-row gap-3 sm:gap-4">
-          <a href="#menu" class="inline-flex justify-center items-center gap-2 bg-terracotta hover:bg-terracottaDark text-white font-semibold px-6 py-3.5 rounded-full text-sm transition shadow-lg">
-            <span>Lihat Menu & Pesan</span>
+        <div class="mt-8 flex flex-col sm:flex-row gap-3.5 sm:gap-4">
+          <a href="#menu" class="inline-flex justify-center items-center gap-2.5 bg-terracotta hover:bg-terracottaHover text-white font-semibold px-7 py-4 rounded-full text-xs sm:text-sm uppercase tracking-widest transition shadow-xl">
+            <span>Eksplorasi Menu</span>
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
-          <a href="#reservasi" class="inline-flex justify-center items-center gap-2 bg-cream/15 hover:bg-cream/25 backdrop-blur-md border border-cream/30 text-white font-semibold px-6 py-3.5 rounded-full text-sm transition">
+          <a href="#reservasi" class="inline-flex justify-center items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-linen/30 text-linen font-semibold px-7 py-4 rounded-full text-xs sm:text-sm uppercase tracking-widest transition">
             <span>Reservasi Meja & Acara</span>
           </a>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ================= TENTANG & KEUNGGULAN ================= -->
-  <section id="tentang" class="max-w-6xl mx-auto px-4 pt-12 pb-6">
-    <div class="bg-sand border border-borderWarm rounded-3xl p-6 sm:p-10 text-center max-w-4xl mx-auto shadow-sm">
-      <span class="text-xs font-bold uppercase tracking-[0.2em] text-terracotta">The Le PARLA Estate</span>
-      <h2 class="font-serif text-2xl sm:text-3xl font-semibold text-espresso mt-2">
-        Lebih dari Sekadar Kafe—Ruang untuk Kisah & Kebersamaan
-      </h2>
-      <p class="mt-3 text-sm sm:text-base text-taupe leading-relaxed">
-        Berlokasi di kawasan The Le PARLA estate, kami menghadirkan tempat bersantai yang lebih hangat dan bermakna—mulai dari <em>casual coffee date</em>, pertemuan kerja, hingga perayaan intim bersama keluarga.
-      </p>
-    </div>
-
-    <!-- 4 Highlight Badges -->
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mt-6">
-      <div class="bg-white/70 border border-borderWarm rounded-2xl p-4">
-        <div class="text-terracotta font-bold text-lg sm:text-xl">4.8 ★</div>
-        <div class="font-semibold text-sm text-espresso mt-0.5">Rating Google Maps</div>
-        <p class="text-xs text-taupe mt-1">Dipercaya 45+ ulasan pelanggan setia</p>
-      </div>
-      <div class="bg-white/70 border border-borderWarm rounded-2xl p-4">
-        <div class="text-sage font-bold text-lg sm:text-xl">Artisan</div>
-        <div class="font-semibold text-sm text-espresso mt-0.5">Coffee & Bakery</div>
-        <p class="text-xs text-taupe mt-1">Kopi pilihan & pastry segar tiap hari</p>
-      </div>
-      <div class="bg-white/70 border border-borderWarm rounded-2xl p-4">
-        <div class="text-terracotta font-bold text-lg sm:text-xl">Estetik</div>
-        <div class="font-semibold text-sm text-espresso mt-0.5">Nuansa Mediterania</div>
-        <p class="text-xs text-taupe mt-1">Nyaman untuk santai, WFC, & foto</p>
-      </div>
-      <div class="bg-white/70 border border-borderWarm rounded-2xl p-4">
-        <div class="text-sage font-bold text-lg sm:text-xl">Private</div>
-        <div class="font-semibold text-sm text-espresso mt-0.5">Event & Gathering</div>
-        <p class="text-xs text-taupe mt-1">Tersedia ruang meeting & acara intim</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= KATALOG MENU DIGITAL ================= -->
-  <section id="menu" class="max-w-6xl mx-auto px-4 py-10">
-    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
-      <div>
-        <span class="text-xs font-bold uppercase tracking-[0.2em] text-terracotta">Katalog Menu</span>
-        <h2 class="font-serif text-2xl sm:text-4xl font-semibold text-espresso mt-1">Pilih Sajian Favorit Anda</h2>
-        <p class="text-xs sm:text-sm text-taupe mt-1">Klik tambah untuk menyusun pesanan dan kirim langsung ke WhatsApp kasir.</p>
-      </div>
-
-      <!-- Search Input -->
-      <div class="relative w-full sm:w-72">
-        <input 
-          type="text" 
-          id="search-input" 
-          oninput="handleSearch(this.value)"
-          placeholder="Cari kopi, croissant, pasta..." 
-          class="w-full bg-white border border-borderWarm rounded-full pl-10 pr-4 py-2.5 text-sm text-espresso placeholder:text-taupe/60 focus:outline-none focus:border-terracotta"
-        />
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-taupe absolute left-3.5 top-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-        </svg>
-      </div>
-    </div>
-
-    <!-- Category Filter Pills -->
-    <div id="category-tabs" class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-3 mb-6">
-      <!-- Rendered via JS -->
-    </div>
-
-    <!-- Menu Grid -->
-    <div id="menu-grid" class="grid grid-cols-2 md:grid-cols-3 gap-3.5 sm:gap-6">
-      <!-- Rendered via JS -->
-    </div>
-  </section>
-
-  <!-- ================= RESERVASI MEJA & ACARA ================= -->
-  <section id="reservasi" class="max-w-6xl mx-auto px-4 py-10">
-    <div class="bg-espresso text-cream rounded-3xl p-6 sm:p-10 lg:p-12 shadow-xl">
-      <div class="grid lg:grid-cols-5 gap-8 items-center">
-        <div class="lg:col-span-2">
-          <span class="inline-block bg-terracotta/20 text-terracotta border border-terracotta/40 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full">
-            Booking Tempat
-          </span>
-          <h2 class="font-serif text-2xl sm:text-4xl font-semibold mt-3 leading-snug">
-            Reservasi Meja & Acara Intim
-          </h2>
-          <p class="text-sm text-cream/80 mt-3 leading-relaxed">
-            Rencanakan momen spesial tanpa khawatir kehabisan tempat. Kami siap membantu pengaturan meja untuk:
-          </p>
-          <ul class="mt-4 space-y-2 text-xs sm:text-sm text-cream/90">
-            <li class="flex items-center gap-2"><span class="text-terracotta">✦</span> Casual Coffee Date & Nongkrong</li>
-            <li class="flex items-center gap-2"><span class="text-terracotta">✦</span> Family Gathering & Arisan</li>
-            <li class="flex items-center gap-2"><span class="text-terracotta">✦</span> Business Meeting & Presentasi</li>
-            <li class="flex items-center gap-2"><span class="text-terracotta">✦</span> Birthday & Intimate Celebration</li>
-          </ul>
-        </div>
-
-        <form onsubmit="submitReservation(event)" class="lg:col-span-3 bg-cream text-espresso rounded-2xl p-5 sm:p-7 space-y-4">
-          <div class="grid sm:grid-cols-2 gap-4">
-            <div>
-              <label class="block text-xs font-semibold text-taupe mb-1">Nama Pemesan *</label>
-              <input type="text" id="res-nama" required placeholder="Contoh: Budi Santoso" class="w-full bg-white border border-borderWarm rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-terracotta" />
-            </div>
-            <div>
-              <label class="block text-xs font-semibold text-taupe mb-1">Jenis Acara *</label>
-              <select id="res-acara" class="w-full bg-white border border-borderWarm rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-terracotta">
-                <option value="Casual Coffee Date">Casual Coffee Date</option>
-                <option value="Family Gathering">Family Gathering</option>
-                <option value="Meeting / Kerja">Meeting / Kerja</option>
-                <option value="Intimate Celebration / Ulang Tahun">Intimate Celebration / Ulang Tahun</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-            <div>
-              <label class="block text-xs font-semibold text-taupe mb-1">Tanggal *</label>
-              <input type="date" id="res-tanggal" required class="w-full bg-white border border-borderWarm rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-terracotta" />
-            </div>
-            <div>
-              <label class="block text-xs font-semibold text-taupe mb-1">Jam Kedatangan *</label>
-              <input type="time" id="res-jam" required value="19:00" class="w-full bg-white border border-borderWarm rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-terracotta" />
-            </div>
-            <div class="col-span-2 sm:col-span-1">
-              <label class="block text-xs font-semibold text-taupe mb-1">Jumlah Tamu *</label>
-              <input type="number" id="res-tamu" required min="1" value="4" placeholder="4 Orang" class="w-full bg-white border border-borderWarm rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-terracotta" />
-            </div>
-          </div>
-
+        <!-- Bottom Hero Highlights -->
+        <div class="mt-12 pt-6 border-t border-linen/15 grid grid-cols-3 gap-4 max-w-lg text-xs">
           <div>
-            <label class="block text-xs font-semibold text-taupe mb-1">Catatan Tambahan (Opsional)</label>
-            <input type="text" id="res-catatan" placeholder="Contoh: Area indoor dekat jendela / dekorasi meja kecil" class="w-full bg-white border border-borderWarm rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-terracotta" />
+            <div class="font-serif text-xl sm:text-2xl font-bold text-gold">4.8 ★</div>
+            <div class="text-linen/70 mt-0.5">Rating Google Maps</div>
           </div>
-
-          <button type="submit" class="w-full bg-terracotta hover:bg-terracottaDark text-white font-semibold py-3.5 rounded-xl text-sm transition shadow-md flex items-center justify-center gap-2">
-            <span>Ajukan Reservasi via WhatsApp</span>
-          </button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= LOKASI & KONTAK ================= -->
-  <section id="lokasi" class="max-w-6xl mx-auto px-4 py-10">
-    <div class="bg-sand border border-borderWarm rounded-3xl p-6 sm:p-10">
-      <div class="grid md:grid-cols-2 gap-8 items-center">
-        <div>
-          <span class="text-xs font-bold uppercase tracking-[0.2em] text-terracotta">Kunjungi Kami</span>
-          <h2 class="font-serif text-2xl sm:text-3xl font-semibold text-espresso mt-1">Le Parla - Maison & Café</h2>
-          
-          <div class="mt-5 space-y-4 text-sm">
-            <div class="flex items-start gap-3">
-              <span class="bg-terracotta/15 text-terracotta p-2 rounded-xl mt-0.5">📍</span>
-              <div>
-                <div class="font-semibold text-espresso">Alamat Lengkap</div>
-                <p class="text-taupe mt-0.5 leading-relaxed">
-                  Jalan Pamekasan, Parit Lalang, Kec. Rangkui, Kota Pangkal Pinang, Kepulauan Bangka Belitung 33684
-                </p>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-3">
-              <span class="bg-sage/15 text-sage p-2 rounded-xl mt-0.5">🕒</span>
-              <div>
-                <div class="font-semibold text-espresso">Jam Operasional</div>
-                <p class="text-taupe mt-0.5">Buka Setiap Hari • Tutup Pukul 22.00 WIB</p>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-3">
-              <span class="bg-terracotta/15 text-terracotta p-2 rounded-xl mt-0.5">📞</span>
-              <div>
-                <div class="font-semibold text-espresso">WhatsApp & Telepon</div>
-                <p class="text-taupe mt-0.5">0851-8577-8577</p>
-              </div>
-            </div>
+          <div>
+            <div class="font-serif text-xl sm:text-2xl font-bold text-linen">Artisan</div>
+            <div class="text-linen/70 mt-0.5">Coffee & Bakery</div>
           </div>
-        </div>
-
-        <div class="flex flex-col gap-3">
-          <a 
-            href="https://www.google.com/maps/search/?api=1&query=Le+Parla+Maison+Cafe+Pangkal+Pinang" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            class="w-full bg-espresso hover:bg-espresso/90 text-cream font-semibold py-4 px-6 rounded-2xl text-sm text-center transition shadow-sm flex items-center justify-center gap-2"
-          >
-            <span>🗺️ Buka Rute di Google Maps</span>
-          </a>
-          <a 
-            href="https://wa.me/6285185778577?text=Halo%20Le%20Parla%20Maison%20%26%20Caf%C3%A9%2C%20saya%20ingin%20bertanya%20info%20menu%20%2F%20tempat." 
-            target="_blank" 
-            rel="noopener noreferrer"
-            class="w-full bg-sage hover:bg-sage/90 text-white font-semibold py-4 px-6 rounded-2xl text-sm text-center transition shadow-sm flex items-center justify-center gap-2"
-          >
-            <span>💬 Chat WhatsApp Kasir (0851-8577-8577)</span>
-          </a>
+          <div>
+            <div class="font-serif text-xl sm:text-2xl font-bold text-linen">22.00</div>
+            <div class="text-linen/70 mt-0.5">Buka Hingga Malam</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ================= FOOTER ================= -->
-  <footer class="border-t border-borderWarm mt-8 py-8 text-center text-xs text-taupe px-4">
-    <div class="font-serif text-lg font-bold text-espresso tracking-wider">LE PARLA</div>
-    <div class="uppercase tracking-[0.2em] text-[10px] mb-2">Maison & Café</div>
-    <p>Jalan Pamekasan, Parit Lalang, Kec. Rangkui, Kota Pangkal Pinang</p>
-    <p class="mt-2 opacity-75">© 2026 Le Parla - Maison & Café. All rights reserved.</p>
-  </footer>
-
-  <!-- ================= STICKY BOTTOM CHECKOUT BAR ================= -->
-  <div id="sticky-cart-bar" class="fixed bottom-4 inset-x-4 z-40 max-w-xl mx-auto hidden">
-    <button onclick="openCart()" class="w-full bg-espresso text-cream px-5 py-3.5 rounded-2xl shadow-2xl border border-cream/15 flex items-center justify-between hover:bg-espresso/95 transition">
-      <div class="flex items-center gap-3">
-        <span id="bar-item-count" class="bg-terracotta text-white text-xs font-bold w-7 h-7 rounded-full flex items-center justify-center">0</span>
-        <div class="text-left">
-          <div class="text-xs text-cream/75">Total Pesanan</div>
-          <div id="bar-total-price" class="text-sm font-bold text-white">Rp 0</div>
+  <!-- ================= THE LE PARLA ESTATE (EDITORIAL SPLIT) ================= -->
+  <section id="filosofi" class="max-w-6xl mx-auto px-4 sm:px-6 py-14 sm:py-20">
+    <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <!-- Left Editorial Photo Collage -->
+      <div class="lg:col-span-6 relative">
+        <div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-xl border border-hairline">
+          <img
+            src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1000&q=85"
+            alt="Kopi Spesialti Le Parla"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <!-- Floating Signature Card -->
+        <div class="hidden sm:block absolute -bottom-6 -right-4 bg-espresso text-linen p-5 rounded-2xl shadow-2xl border border-gold/30 max-w-[230px]">
+          <div class="text-gold text-[10px] uppercase tracking-[0.22em] font-bold">The Le PARLA Estate</div>
+          <p class="font-serif italic text-base mt-1 leading-snug">
+            "Dirancang untuk membuat setiap kunjungan terasa seperti pulang ke rumah."
+          </p>
         </div>
       </div>
-      <span class="bg-terracotta text-white text-xs font-semibold px-4 py-2 rounded-xl">
-        Lihat Keranjang →
-      </span>
-    </button>
-  </div>
 
-  <!-- ================= MODAL KERANJANG & CHECKOUT WA ================= -->
-  <div id="cart-modal" class="fixed inset-0 z-50 hidden">
-    <div onclick="closeCart()" class="absolute inset-0 bg-espresso/60 backdrop-blur-xs"></div>
-    <div class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-cream shadow-2xl flex flex-col">
-      <!-- Header Modal -->
-      <div class="p-4 sm:p-5 border-b border-borderWarm flex items-center justify-between bg-sand">
+      <!-- Right Editorial Story -->
+      <div class="lg:col-span-6">
+        <div class="inline-flex items-center gap-2 text-terracotta text-xs font-bold uppercase tracking-[0.24em]">
+          <span class="w-6 h-[1px] bg-terracotta"></span>
+          <span>Tentang Kami</span>
+        </div>
+
+        <h2 class="font-serif text-3xl sm:text-5xl font-semibold text-espresso mt-3 leading-[1.12]">
+          Lebih dari Sekadar Kafe—Sebuah Ruang untuk <span class="italic text-terracotta">Kebersamaan</span>.
+        </h2>
+
+        <p class="mt-4 text-sm sm:text-base text-taupe leading-relaxed">
+          Berlokasi di kawasan <strong>The Le PARLA Estate</strong>, Parit Lalang, kami memadukan estetika arsitektur Mediterania yang hangat dengan kurasi biji kopi pilihan, <em>pastry</em> panggang harian, serta sajian makan utama yang memanjakan lidah.
+        </p>
+
+        <div class="grid grid-cols-2 gap-4 mt-7 pt-7 border-t border-hairline">
+          <div>
+            <div class="text-xs font-bold uppercase tracking-wider text-espresso">Suasana Intim & WFC</div>
+            <p class="text-xs text-taupe mt-1 leading-relaxed">Pencahayaan alami yang tenang untuk bekerja maupun berbincang santai.</p>
+          </div>
+          <div>
+            <div class="text-xs font-bold uppercase tracking-wider text-espresso">Private Event Ready</div>
+            <p class="text-xs text-taupe mt-1 leading-relaxed">Tersedia pengaturan ruang untuk <em>family gathering</em>, arisan, hingga <em>meeting</em>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= INTERACTIVE DIGITAL MENU ================= -->
+  <section id="menu" class="bg-travertine/70 border-y border-hairline py-14 sm:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-8">
         <div>
-          <h3 class="font-serif text-xl font-bold text-espresso">Keranjang Pesanan</h3>
-          <p class="text-xs text-taupe">Kirim pesanan langsung ke WhatsApp kasir</p>
+          <div class="inline-flex items-center gap-2 text-terracotta text-xs font-bold uppercase tracking-[0.24em]">
+            <span class="w-6 h-[1px] bg-terracotta"></span>
+            <span>Katalog Menu Digital</span>
+          </div>
+          <h2 class="font-serif text-3xl sm:text-5xl font-semibold text-espresso mt-2">
+            Kurasi Sajian <span class="italic font-normal">Le Parla</span>
+          </h2>
+          <p class="text-xs sm:text-sm text-taupe mt-1.5">
+            Pilih menu, atur varian suhu/gula sesuai selera, lalu kirim pesanan langsung ke WhatsApp kasir.
+          </p>
         </div>
-        <button onclick="closeCart()" class="w-8 h-8 rounded-full bg-white border border-borderWarm flex items-center justify-center text-espresso font-bold">✕</button>
+
+        <!-- Search Input -->
+        <div class="relative w-full md:w-72">
+          <input
+            type="text"
+            id="search-input"
+            oninput="handleSearch(this.value)"
+            placeholder="Cari menu favorit Anda..."
+            class="w-full bg-linen border border-hairline rounded-full pl-10 pr-4 py-3 text-xs sm:text-sm text-espresso placeholder:text-taupe/60 focus:outline-none focus:border-terracotta shadow-sm"
+          />
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-taupe absolute left-3.5 top-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </div>
       </div>
 
-      <!-- Isi Item Keranjang -->
-      <div id="cart-items-container" class="flex-1 overflow-y-auto p-4 sm:p-5 space-y-3">
+      <!-- Category Filter Tabs -->
+      <div id="category-tabs" class="flex items-center gap-2.5 overflow-x-auto no-scrollbar pb-3 mb-7">
         <!-- Rendered via JS -->
       </div>
 
-      <!-- Form Checkout -->
-      <form onsubmit="checkoutWhatsApp(event)" class="p-4 sm:p-5 border-t border-borderWarm bg-sand space-y-3">
-        <div class="flex items-center justify-between text-sm font-bold text-espresso pb-2 border-b border-borderWarm">
-          <span>Total Pembayaran</span>
-          <span id="modal-total-price" class="text-lg text-terracotta">Rp 0</span>
+      <!-- Menu Cards Grid -->
+      <div id="menu-grid" class="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-7">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GOOGLE MAPS SOCIAL PROOF ================= -->
+  <section id="ulasan" class="max-w-6xl mx-auto px-4 sm:px-6 py-14 sm:py-20">
+    <div class="text-center max-w-2xl mx-auto mb-10">
+      <div class="text-gold text-xs font-bold uppercase tracking-[0.25em]">Dipercaya Pelanggan</div>
+      <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-espresso mt-2">
+        Cerita dari Meja <span class="italic">Le Parla</span>
+      </h2>
+      <div class="inline-flex items-center gap-2 bg-travertine border border-hairline px-4 py-1.5 rounded-full text-xs font-semibold text-espresso mt-3">
+        <span class="text-amber-500">★★★★★</span>
+        <span>4.8 / 5.0 berdasarkan ulasan pengunjung di Google Maps</span>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-5">
+      <div class="bg-white border border-hairline rounded-3xl p-6 shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="text-amber-500 text-xs tracking-widest mb-3">★★★★★</div>
+          <p class="font-serif italic text-lg text-espresso leading-relaxed">
+            "Ambiance-nya tenang dan estetik banget di Pangkal Pinang. Signature Latte dan Butter Croissant-nya wajib dicoba kalau mampir sore."
+          </p>
+        </div>
+        <div class="mt-5 pt-4 border-t border-hairline flex items-center justify-between text-xs">
+          <span class="font-bold text-espresso">Nadia Putri</span>
+          <span class="text-taupe">Local Guide • Google Maps</span>
+        </div>
+      </div>
+
+      <div class="bg-white border border-hairline rounded-3xl p-6 shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="text-amber-500 text-xs tracking-widest mb-3">★★★★★</div>
+          <p class="font-serif italic text-lg text-espresso leading-relaxed">
+            "Tempat paling nyaman buat meeting santai atau makan malam bareng keluarga. Pelayanannya ramah dan makanannya konsisten enak."
+          </p>
+        </div>
+        <div class="mt-5 pt-4 border-t border-hairline flex items-center justify-between text-xs">
+          <span class="font-bold text-espresso">Rizky Pratama</span>
+          <span class="text-taupe">Pengunjung • Google Maps</span>
+        </div>
+      </div>
+
+      <div class="bg-white border border-hairline rounded-3xl p-6 shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="text-amber-500 text-xs tracking-widest mb-3">★★★★★</div>
+          <p class="font-serif italic text-lg text-espresso leading-relaxed">
+            "Nuansa Mediterania-nya dapet banget, tiap sudut cakep buat foto tapi tetap terasa hangat dan nggak berisik. Pasti balik lagi."
+          </p>
+        </div>
+        <div class="mt-5 pt-4 border-t border-hairline flex items-center justify-between text-xs">
+          <span class="font-bold text-espresso">Clara Wijaya</span>
+          <span class="text-taupe">Local Guide • Google Maps</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= RESERVATION & PRIVATE EVENTS ================= -->
+  <section id="reservasi" class="max-w-6xl mx-auto px-4 sm:px-6 pb-14 sm:pb-20">
+    <div class="bg-espresso text-linen rounded-[2rem] p-6 sm:p-10 lg:p-14 shadow-2xl border border-gold/25 relative overflow-hidden">
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-10 items-center relative z-10">
+        <!-- Left Info -->
+        <div class="lg:col-span-5">
+          <span class="inline-block border border-gold/40 bg-gold/10 text-gold text-[11px] font-bold uppercase tracking-[0.22em] px-3.5 py-1.5 rounded-full">
+            Private & Table Booking
+          </span>
+          <h2 class="font-serif text-3xl sm:text-5xl font-semibold mt-4 leading-[1.1]">
+            Reservasi Meja & <span class="italic text-gold">Momen Spesial</span>
+          </h2>
+          <p class="text-sm text-linen/75 mt-4 leading-relaxed">
+            Amankan meja favorit Anda sebelum kedatangan. Tim kami siap menyiapkan tata ruang khusus untuk berbagai kebutuhan acara:
+          </p>
+
+          <div class="mt-6 space-y-3 text-xs sm:text-sm text-linen/90">
+            <div class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-gold/15 text-gold flex items-center justify-center text-xs">✦</span>
+              <span>Casual Coffee Date & Sore Santai</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-gold/15 text-gold flex items-center justify-center text-xs">✦</span>
+              <span>Family Gathering, Arisan & Makan Malam</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-gold/15 text-gold flex items-center justify-center text-xs">✦</span>
+              <span>Business Meeting & Presentasi Tim</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-gold/15 text-gold flex items-center justify-center text-xs">✦</span>
+              <span>Intimate Birthday & Bridal Shower</span>
+            </div>
+          </div>
         </div>
 
-        <div>
-          <input type="text" id="order-nama" required placeholder="Nama Pemesan *" class="w-full bg-white bord
+        <!-- Right Reservation Form -->
+        <form onsubmit="submitReservation(event)" class="lg:col-span-7 bg-linen text-espresso rounded-3xl p-5 sm:p-8 space-y-4 shadow-xl">
+          <!-- Area Selector Pills -->
+          <div>
+            <label class="block text-[11px] font-bold uppercase tracking-wider text-taupe mb-2">Pilih Area Tempat Duduk</label>
+            <div class="grid grid-cols-3 gap-2" id="area-selector">
+              <button type="button" onclick="selectArea(this, 'Indoor Lounge (AC)')" class="area-btn active bg-espresso text-linen border border-espresso rounded-xl py-2.5 px-2 text-xs font-semibold transition">
+                Indoor AC
+              </button>
+              <button type="button" onclick="selectArea(this, 'Mediterranean Courtyard')" class="area-btn bg-white text-taupe border border-hairline rounded-xl py-2.5 px-2 text-xs font-semibold hover:border-espresso/40 transition">
+                Courtyard
+              </button>
+              <button type="button" onclick="selectArea(this, 'Private Event Space')" class="area-btn bg-white text-taupe border border-hairline rounded-xl py-2.5 px-2 text-xs font-semibold hover:border-espresso/40 transition">
+                Private Room
+              </button>
+            </div>
+            <input type="hidden" id="res-area" value="Indoor Lounge (AC)" />
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-[11px] font-bold uppercase tracking-wider text-taupe mb-1">Nama Pemesan *</label>
+              <input type="text" id="res-nama" required placeholder="Nama lengkap Anda" class="w-full bg-white border border-hairline rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-terracotta" />
+     

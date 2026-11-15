@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -29,6 +29,7 @@
           },
           fontFamily: {
             serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            script: ['"Great Vibes"', 'cursive'],
             sans: ['"Plus Jakarta Sans"', 'sans-serif'],
           }
         }
@@ -48,31 +49,71 @@
 </head>
 <body class="antialiased selection:bg-terracotta selection:text-white pb-24">
 
-  <header class="sticky top-0 z-40 bg-linen/90 backdrop-blur-md border-b border-hairline transition-all">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
-      <a href="#beranda" class="flex items-center gap-3 group">
-        <div class="w-9 h-9 rounded-full border border-gold/60 bg-espresso text-gold flex items-center justify-center font-serif text-base font-bold tracking-wider shadow-sm">LP</div>
-        <div class="flex flex-col">
-          <span class="font-serif text-xl sm:text-2xl font-bold tracking-[0.14em] text-espresso leading-none">LE PARLA</span>
-          <span class="text-[10px] uppercase tracking-[0.24em] text-taupe mt-0.5">Maison & Café</span>
+  <!-- ================= HEADER HITAM RESMI ALA LEPARLA.ID ================= -->
+  <header class="sticky top-0 z-40 bg-[#0B0A0A] text-white border-b border-white/10 shadow-lg">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between">
+      <!-- Logo LE PARLA + Dandelion + Memories Factory -->
+      <a href="#beranda" class="relative inline-flex flex-col items-center select-none group">
+        <!-- SVG Bunga Dandelion Melengkung -->
+        <svg viewBox="0 0 120 34" class="w-24 h-6 text-white/90 -mb-2.5 overflow-visible" fill="none">
+          <path d="M47 34 Q49 18 56 11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+          <circle cx="56" cy="11" r="2.2" fill="currentColor"/>
+          <g stroke="currentColor" stroke-width="0.9" stroke-linecap="round">
+            <line x1="56" y1="11" x2="47" y2="5"/><line x1="56" y1="11" x2="52" y2="2"/>
+            <line x1="56" y1="11" x2="59" y2="2"/><line x1="56" y1="11" x2="65" y2="6"/>
+            <line x1="56" y1="11" x2="66" y2="12"/><line x1="56" y1="11" x2="63" y2="17"/>
+            <line x1="56" y1="11" x2="46" y2="12"/>
+          </g>
+          <!-- Serbuk Dandelion Terbang ke Kanan -->
+          <g fill="currentColor">
+            <circle cx="69" cy="4" r="1"/><circle cx="75" cy="7" r="1.2"/><circle cx="82" cy="4" r="0.9"/>
+            <circle cx="72" cy="12" r="0.9"/><circle cx="79" cy="11" r="1.1"/><circle cx="87" cy="8" r="0.8"/>
+          </g>
+        </svg>
+
+        <div class="font-serif text-2xl sm:text-[26px] tracking-[0.06em] font-semibold leading-none text-white">
+          LE <span class="ml-1.5">PARLA</span>
         </div>
+        <span class="font-script text-[17px] sm:text-[19px] text-white/90 -mt-1 tracking-wide">
+          Memories Factory
+        </span>
       </a>
 
-      <nav class="hidden md:flex items-center gap-7 text-xs uppercase tracking-[0.15em] font-semibold text-taupe">
-        <a href="#filosofi" class="hover:text-terracotta transition">The Estate</a>
-        <a href="#menu" class="hover:text-terracotta transition">Katalog Menu</a>
-        <a href="#venue-event" class="hover:text-terracotta transition">Venue & Wedding</a>
-        <a href="#reservasi" class="hover:text-terracotta transition">Reservasi</a>
-        <a href="#lokasi" class="hover:text-terracotta transition">Kontak & Sosmed</a>
+      <!-- Menu Desktop -->
+      <nav class="hidden md:flex items-center gap-7 text-xs uppercase tracking-[0.16em] font-medium text-white/80">
+        <a href="#filosofi" class="hover:text-gold transition">The Estate</a>
+        <a href="#menu" class="hover:text-gold transition">Katalog Menu</a>
+        <a href="#venue-event" class="hover:text-gold transition">Venue & Wedding</a>
+        <a href="#reservasi" class="hover:text-gold transition">Reservasi</a>
+        <a href="#lokasi" class="hover:text-gold transition">Kontak & Sosmed</a>
       </nav>
 
-      <button onclick="openCart()" class="relative flex items-center gap-2.5 bg-espresso text-linen px-4 py-2 rounded-full text-xs font-semibold tracking-wide shadow-md hover:bg-mocha transition">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-        </svg>
-        <span>Pesanan</span>
-        <span id="nav-cart-badge" class="bg-terracotta text-white text-[11px] font-bold px-1.5 py-0.5 rounded-full min-w-[20px] text-center">0</span>
-      </button>
+      <!-- Kanan: Tombol Keranjang & Ikon Garis Tiga (≡) -->
+      <div class="flex items-center gap-3">
+        <button onclick="openCart()" class="relative flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/15 text-white px-3.5 py-2 rounded-full text-xs font-semibold transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+          <span class="hidden sm:inline">Pesanan</span>
+          <span id="nav-cart-badge" class="bg-terracotta text-white text-[11px] font-bold px-1.5 py-0.5 rounded-full min-w-[20px] text-center">0</span>
+        </button>
+
+        <!-- Tombol Garis Tiga (≡) persis seperti di leparla.id -->
+        <button onclick="toggleMobileMenu()" aria-label="Buka Menu" class="md:hidden p-2 text-white hover:text-gold transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Dropdown Menu Mobile saat garis tiga diketuk -->
+    <div id="mobile-nav-drawer" class="hidden md:hidden bg-[#141212] border-t border-white/10 px-6 py-4 space-y-3 text-xs uppercase tracking-[0.18em] font-semibold text-white/90">
+      <a href="#filosofi" onclick="toggleMobileMenu()" class="block py-1.5 hover:text-gold">The Estate</a>
+      <a href="#menu" onclick="toggleMobileMenu()" class="block py-1.5 hover:text-gold">Katalog Menu Café</a>
+      <a href="#venue-event" onclick="toggleMobileMenu()" class="block py-1.5 hover:text-gold">Venue & Wedding</a>
+      <a href="#reservasi" onclick="toggleMobileMenu()" class="block py-1.5 hover:text-gold">Reservasi Meja & Event</a>
+      <a href="#lokasi" onclick="toggleMobileMenu()" class="block py-1.5 hover:text-gold">Kontak & Media Sosial</a>
     </div>
   </header>
     <section id="beranda" class="relative overflow-hidden bg-espresso">

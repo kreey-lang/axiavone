@@ -6,12 +6,10 @@
   <title>Le PARLA — Maison & Café | Memories Factory Pangkal Pinang</title>
   <meta name="description" content="Simple. Timeless. Premium. Katalog menu digital Le PARLA Maison & Café serta reservasi Intimate & Garden Event di Pangkal Pinang." />
 
-  <!-- Editorial Luxury Fonts: Cormorant Garamond & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -39,44 +37,21 @@
   </script>
 
   <style>
-    body {
-      background-color: #FBF9F5;
-      color: #1C1410;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-    }
-    .no-scrollbar::-webkit-scrollbar {
-      display: none;
-    }
-    .no-scrollbar {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-    @keyframes slowZoom {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.06); }
-      100% { transform: scale(1); }
-    }
-    .animate-kenburns {
-      animation: slowZoom 24s ease-in-out infinite;
-    }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(16px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .animate-fade-up {
-      animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    }
+    body { background-color: #FBF9F5; color: #1C1410; font-family: 'Plus Jakarta Sans', sans-serif; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    @keyframes slowZoom { 0% { transform: scale(1); } 50% { transform: scale(1.06); } 100% { transform: scale(1); } }
+    .animate-kenburns { animation: slowZoom 24s ease-in-out infinite; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+    .animate-fade-up { animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
   </style>
 </head>
 <body class="antialiased selection:bg-terracotta selection:text-white pb-24">
 
-  <!-- ================= FLOATING GLASS NAVBAR ================= -->
   <header class="sticky top-0 z-40 bg-linen/90 backdrop-blur-md border-b border-hairline transition-all">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
       <a href="#beranda" class="flex items-center gap-3 group">
-        <div class="w-9 h-9 rounded-full border border-gold/60 bg-espresso text-gold flex items-center justify-center font-serif text-base font-bold tracking-wider shadow-sm">
-          LP
-        </div>
+        <div class="w-9 h-9 rounded-full border border-gold/60 bg-espresso text-gold flex items-center justify-center font-serif text-base font-bold tracking-wider shadow-sm">LP</div>
         <div class="flex flex-col">
           <span class="font-serif text-xl sm:text-2xl font-bold tracking-[0.14em] text-espresso leading-none">LE PARLA</span>
           <span class="text-[10px] uppercase tracking-[0.24em] text-taupe mt-0.5">Maison & Café</span>
@@ -88,7 +63,7 @@
         <a href="#menu" class="hover:text-terracotta transition">Katalog Menu</a>
         <a href="#venue-event" class="hover:text-terracotta transition">Venue & Wedding</a>
         <a href="#reservasi" class="hover:text-terracotta transition">Reservasi</a>
-        <a href="#lokasi" class="hover:text-terracotta transition">Lokasi</a>
+        <a href="#lokasi" class="hover:text-terracotta transition">Kontak & Sosmed</a>
       </nav>
 
       <button onclick="openCart()" class="relative flex items-center gap-2.5 bg-espresso text-linen px-4 py-2 rounded-full text-xs font-semibold tracking-wide shadow-md hover:bg-mocha transition">
@@ -100,28 +75,19 @@
       </button>
     </div>
   </header>
-
-  <!-- ================= LUXURY EDITORIAL HERO ================= -->
-  <section id="beranda" class="relative overflow-hidden bg-espresso">
+    <section id="beranda" class="relative overflow-hidden bg-espresso">
     <div class="relative min-h-[590px] sm:min-h-[650px] flex items-center">
-      <img
-        src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1600&q=85"
-        alt="Le PARLA Maison & Café Pangkal Pinang"
-        class="absolute inset-0 w-full h-full object-cover opacity-65 animate-kenburns"
-      />
+      <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1600&q=85" alt="Le PARLA Maison & Café Pangkal Pinang" class="absolute inset-0 w-full h-full object-cover opacity-65 animate-kenburns" />
       <div class="absolute inset-0 bg-gradient-to-t from-espresso via-espresso/75 to-espresso/30"></div>
       <div class="absolute inset-0 bg-gradient-to-r from-espresso/85 via-espresso/40 to-transparent"></div>
 
       <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24 text-linen w-full animate-fade-up">
-        <!-- Real-Time Operational Pill (Selasa - Minggu 10.00 - 22.00 WIB) -->
         <div id="live-status-pill" class="inline-flex items-center gap-2.5 bg-white/10 backdrop-blur-md border border-gold/35 px-4 py-1.5 rounded-full text-xs font-medium text-linen mb-6">
           <span id="live-status-dot" class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
           <span id="live-status-text">Selasa – Minggu • 10.00 – 22.00 WIB</span>
         </div>
 
-        <div class="text-gold text-xs sm:text-sm uppercase tracking-[0.28em] font-semibold mb-3">
-          Simple • Timeless • Premium
-        </div>
+        <div class="text-gold text-xs sm:text-sm uppercase tracking-[0.28em] font-semibold mb-3">Simple • Timeless • Premium</div>
 
         <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-semibold leading-[1.08] max-w-3xl tracking-tight">
           Le PARLA Maison & Café — <span class="italic font-normal text-gold">Memories Factory</span> di Jantung Kota.
@@ -134,16 +100,13 @@
         <div class="mt-8 flex flex-col sm:flex-row gap-3.5 sm:gap-4">
           <a href="#menu" class="inline-flex justify-center items-center gap-2.5 bg-terracotta hover:bg-terracottaHover text-white font-semibold px-7 py-4 rounded-full text-xs sm:text-sm uppercase tracking-widest transition shadow-xl">
             <span>Katalog Menu Café</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           </a>
           <a href="#reservasi" class="inline-flex justify-center items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-linen/30 text-linen font-semibold px-7 py-4 rounded-full text-xs sm:text-sm uppercase tracking-widest transition">
             <span>Reservasi Meja & Event</span>
           </a>
         </div>
 
-        <!-- Bottom Hero Highlights -->
         <div class="mt-12 pt-6 border-t border-linen/15 grid grid-cols-3 gap-4 max-w-xl text-xs">
           <div>
             <div class="font-serif text-xl sm:text-2xl font-bold text-gold">Maison & Café</div>
@@ -162,22 +125,15 @@
     </div>
   </section>
 
-  <!-- ================= THE LE PARLA ESTATE ================= -->
   <section id="filosofi" class="max-w-6xl mx-auto px-4 sm:px-6 py-14 sm:py-20">
     <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
       <div class="lg:col-span-6 relative">
         <div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-xl border border-hairline">
-          <img
-            src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1000&q=85"
-            alt="Suasana Le PARLA Estate"
-            class="w-full h-full object-cover"
-          />
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1000&q=85" alt="Suasana Le PARLA Estate" class="w-full h-full object-cover" />
         </div>
         <div class="hidden sm:block absolute -bottom-6 -right-4 bg-espresso text-linen p-5 rounded-2xl shadow-2xl border border-gold/30 max-w-[245px]">
           <div class="text-gold text-[10px] uppercase tracking-[0.22em] font-bold">Celebrating Love in Every Scale</div>
-          <p class="font-serif italic text-base mt-1 leading-snug">
-            "Dari secangkir kopi hangat hingga perayaan pernikahan impian di satu kawasan."
-          </p>
+          <p class="font-serif italic text-base mt-1 leading-snug">"Dari secangkir kopi hangat hingga perayaan pernikahan impian di satu kawasan."</p>
         </div>
       </div>
 
@@ -186,15 +142,12 @@
           <span class="w-6 h-[1px] bg-terracotta"></span>
           <span>The Le PARLA Estate</span>
         </div>
-
         <h2 class="font-serif text-3xl sm:text-5xl font-semibold text-espresso mt-3 leading-[1.12]">
           Harmoni antara <span class="italic text-terracotta">Artisan Café</span> dan Kemegahan Venue.
         </h2>
-
         <p class="mt-4 text-sm sm:text-base text-taupe leading-relaxed">
           Berlokasi di Jalan Pamekasan, Parit Lalang, <strong>Le PARLA</strong> menghadirkan arsitektur klasik bernuansa putih yang lembut dengan area parkir luas—menjadikannya destinasi pilihan untuk bersantai di <strong>Maison & Café</strong> maupun menggelar <em>Intimate & Garden Wedding</em>.
         </p>
-
         <div class="grid grid-cols-2 gap-4 mt-7 pt-7 border-t border-hairline">
           <div>
             <div class="text-xs font-bold uppercase tracking-wider text-espresso">Le PARLA Maison & Café</div>
@@ -208,9 +161,7 @@
       </div>
     </div>
   </section>
-
-  <!-- ================= INTERACTIVE DIGITAL MENU ================= -->
-  <section id="menu" class="bg-travertine/70 border-y border-hairline py-14 sm:py-20">
+    <section id="menu" class="bg-travertine/70 border-y border-hairline py-14 sm:py-20">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-8">
         <div>
@@ -221,41 +172,25 @@
           <h2 class="font-serif text-3xl sm:text-5xl font-semibold text-espresso mt-2">
             Sajian <span class="italic font-normal">Maison & Café</span>
           </h2>
-          <p class="text-xs sm:text-sm text-taupe mt-1.5">
-            Pilih menu favorit, atur varian suhu atau takaran gula, lalu kirim pesanan langsung ke WhatsApp.
-          </p>
+          <p class="text-xs sm:text-sm text-taupe mt-1.5">Pilih menu favorit, atur varian suhu atau takaran gula, lalu kirim pesanan langsung ke WhatsApp.</p>
         </div>
 
         <div class="relative w-full md:w-72">
-          <input
-            type="text"
-            id="search-input"
-            oninput="handleSearch(this.value)"
-            placeholder="Cari menu favorit Anda..."
-            class="w-full bg-linen border border-hairline rounded-full pl-10 pr-4 py-3 text-xs sm:text-sm text-espresso placeholder:text-taupe/60 focus:outline-none focus:border-terracotta shadow-sm"
-          />
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-taupe absolute left-3.5 top-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
+          <input type="text" id="search-input" oninput="handleSearch(this.value)" placeholder="Cari menu favorit Anda..." class="w-full bg-linen border border-hairline rounded-full pl-10 pr-4 py-3 text-xs sm:text-sm text-espresso placeholder:text-taupe/60 focus:outline-none focus:border-terracotta shadow-sm" />
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-taupe absolute left-3.5 top-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
         </div>
       </div>
 
       <div id="category-tabs" class="flex items-center gap-2.5 overflow-x-auto no-scrollbar pb-3 mb-7"></div>
-
       <div id="menu-grid" class="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-7"></div>
     </div>
   </section>
 
-  <!-- ================= VENUE & MEMORIES FACTORY SHOWCASE ================= -->
   <section id="venue-event" class="max-w-6xl mx-auto px-4 sm:px-6 py-14 sm:py-20">
     <div class="text-center max-w-2xl mx-auto mb-10">
       <div class="text-gold text-xs font-bold uppercase tracking-[0.25em]">Le PARLA Venue • Memories Factory</div>
-      <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-espresso mt-2">
-        Celebrating Love in <span class="italic">Every Scale</span>
-      </h2>
-      <p class="text-xs sm:text-sm text-taupe mt-2 leading-relaxed">
-        Selain bersantai di kafe, kawasan Le PARLA dirancang fleksibel untuk berbagai skala perayaan pribadi maupun korporat.
-      </p>
+      <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-espresso mt-2">Celebrating Love in <span class="italic">Every Scale</span></h2>
+      <p class="text-xs sm:text-sm text-taupe mt-2 leading-relaxed">Selain bersantai di kafe, kawasan Le PARLA dirancang fleksibel untuk berbagai skala perayaan pribadi maupun korporat.</p>
     </div>
 
     <div class="grid md:grid-cols-3 gap-5">
@@ -263,13 +198,10 @@
         <div>
           <span class="text-[11px] font-bold uppercase tracking-widest text-terracotta">01 • Intimate & Garden</span>
           <h3 class="font-serif text-2xl font-bold text-espresso mt-1.5">Intimate & Garden Wedding</h3>
-          <p class="text-xs text-taupe mt-2 leading-relaxed">
-            Suasana sakral dan hangat bernuansa putih klasik dengan pilihan area taman maupun <em>indoor</em> untuk momen pernikahan penuh keakraban.
-          </p>
+          <p class="text-xs text-taupe mt-2 leading-relaxed">Suasana sakral dan hangat bernuansa putih klasik dengan pilihan area taman maupun <em>indoor</em> untuk momen pernikahan penuh keakraban.</p>
         </div>
         <a href="#reservasi" onclick="presetAcara('Intimate / Garden Wedding')" class="mt-5 pt-4 border-t border-hairline text-xs font-bold uppercase tracking-wider text-espresso hover:text-terracotta flex items-center justify-between">
-          <span>Tanya Paket & Jadwal</span>
-          <span>→</span>
+          <span>Tanya Paket & Jadwal</span><span>→</span>
         </a>
       </div>
 
@@ -277,13 +209,10 @@
         <div>
           <span class="text-[11px] font-bold uppercase tracking-widest text-terracotta">02 • Grand Celebration</span>
           <h3 class="font-serif text-2xl font-bold text-espresso mt-1.5">Grand Wedding & Reception</h3>
-          <p class="text-xs text-taupe mt-2 leading-relaxed">
-            Kapasitas ruang luas berarsitektur Eropa elegan yang didukung area parkir memadai bagi seluruh tamu undangan Anda.
-          </p>
+          <p class="text-xs text-taupe mt-2 leading-relaxed">Kapasitas ruang luas berarsitektur Eropa elegan yang didukung area parkir memadai bagi seluruh tamu undangan Anda.</p>
         </div>
         <a href="https://leparla.id" target="_blank" rel="noopener noreferrer" class="mt-5 pt-4 border-t border-hairline text-xs font-bold uppercase tracking-wider text-espresso hover:text-terracotta flex items-center justify-between">
-          <span>Lihat Profil Venue Utama</span>
-          <span>↗</span>
+          <span>Lihat Profil Venue Utama</span><span>↗</span>
         </a>
       </div>
 
@@ -291,50 +220,27 @@
         <div>
           <span class="text-[11px] font-bold uppercase tracking-widest text-terracotta">03 • Private & Corporate</span>
           <h3 class="font-serif text-2xl font-bold text-espresso mt-1.5">Gathering, Iftar & Pre-Wed</h3>
-          <p class="text-xs text-taupe mt-2 leading-relaxed">
-            Pilihan tepat untuk <em>bridal shower</em>, sesi foto <em>pre-wedding</em>, arisan keluarga, hingga <em>gathering</em> dan buka puasa bersama.
-          </p>
+          <p class="text-xs text-taupe mt-2 leading-relaxed">Pilihan tepat untuk <em>bridal shower</em>, sesi foto <em>pre-wedding</em>, arisan keluarga, hingga <em>gathering</em> dan buka puasa bersama.</p>
         </div>
         <a href="#reservasi" onclick="presetAcara('Private Gathering / Pre-wedding')" class="mt-5 pt-4 border-t border-hairline text-xs font-bold uppercase tracking-wider text-espresso hover:text-terracotta flex items-center justify-between">
-          <span>Reservasi Tanggal</span>
-          <span>→</span>
+          <span>Reservasi Tanggal</span><span>→</span>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- ================= RESERVATION & EVENT INQUIRY ================= -->
   <section id="reservasi" class="max-w-6xl mx-auto px-4 sm:px-6 pb-14 sm:pb-20">
     <div class="bg-espresso text-linen rounded-[2rem] p-6 sm:p-10 lg:p-14 shadow-2xl border border-gold/25">
       <div class="grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
         <div class="lg:col-span-5">
-          <span class="inline-block border border-gold/40 bg-gold/10 text-gold text-[11px] font-bold uppercase tracking-[0.22em] px-3.5 py-1.5 rounded-full">
-            Table & Event Concierge
-          </span>
-          <h2 class="font-serif text-3xl sm:text-5xl font-semibold mt-4 leading-[1.1]">
-            Reservasi Meja & <span class="italic text-gold">Konsultasi Acara</span>
-          </h2>
-          <p class="text-sm text-linen/75 mt-4 leading-relaxed">
-            Jadwalkan kunjungan santai di <strong>Maison & Café</strong> atau ajukan survei tempat untuk acara spesial Anda langsung melalui WhatsApp tim kami:
-          </p>
-
+          <span class="inline-block border border-gold/40 bg-gold/10 text-gold text-[11px] font-bold uppercase tracking-[0.22em] px-3.5 py-1.5 rounded-full">Table & Event Concierge</span>
+          <h2 class="font-serif text-3xl sm:text-5xl font-semibold mt-4 leading-[1.1]">Reservasi Meja & <span class="italic text-gold">Konsultasi Acara</span></h2>
+          <p class="text-sm text-linen/75 mt-4 leading-relaxed">Jadwalkan kunjungan santai di <strong>Maison & Café</strong> atau ajukan survei tempat untuk acara spesial Anda langsung melalui WhatsApp tim kami:</p>
           <div class="mt-6 space-y-3 text-xs sm:text-sm text-linen/90">
-            <div class="flex items-center gap-3">
-              <span class="w-6 h-6 rounded-full bg-gold/15 text-gold flex items-center justify-center text-xs">✦</span>
-              <span>Reservasi Meja Café (Selasa – Minggu)</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="w-6 h-6 rounded-full bg-gold/15 text-gold flex items-center justify-center text-xs">✦</span>
-              <span>Intimate, Garden & Grand Wedding Inquiry</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="w-6 h-6 rounded-full bg-gold/15 text-gold flex items-center justify-center text-xs">✦</span>
-              <span>Sesi Foto Pre-wedding & Bridal Shower</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="w-6 h-6 rounded-full bg-gold/15 text-gold flex items-center justify-center text-xs">✦</span>
-              <span>Family Gathering & Corporate Meeting</span>
-            </div>
+            <div class="flex items-center gap-3"><span class="w-6 h-6 rounded-full bg-gold/15 text-gold flex items-center justify-center text-xs">✦</span><span>Reservasi Meja Café (Selasa – Minggu)</span></div>
+            <div class="flex items-center gap-3"><span class="w-6 h-6 rounded-full bg-gold/15 text-gold flex items-center justify-center text-xs">✦</span><span>Intimate, Garden & Grand Wedding Inquiry</span></div>
+            <div class="flex items-center gap-3"><span class="w-6 h-6 rounded-full bg-gold/15 text-gold flex items-center justify-center text-xs">✦</span><span>Sesi Foto Pre-wedding & Bridal Shower</span></div>
+            <div class="flex items-center gap-3"><span class="w-6 h-6 rounded-full bg-gold/15 text-gold flex items-center justify-center text-xs">✦</span><span>Family Gathering & Corporate Meeting</span></div>
           </div>
         </div>
 
@@ -342,15 +248,9 @@
           <div>
             <label class="block text-[11px] font-bold uppercase tracking-wider text-taupe mb-2">Pilih Area / Layanan</label>
             <div class="grid grid-cols-3 gap-2" id="area-selector">
-              <button type="button" onclick="selectArea(this, 'Maison & Café (Indoor)')" class="area-btn active bg-espresso text-linen border border-espresso rounded-xl py-2.5 px-2 text-xs font-semibold transition">
-                Café Indoor
-              </button>
-              <button type="button" onclick="selectArea(this, 'Garden / Courtyard')" class="area-btn bg-white text-taupe border border-hairline rounded-xl py-2.5 px-2 text-xs font-semibold hover:border-espresso/40 transition">
-                Garden Area
-              </button>
-              <button type="button" onclick="selectArea(this, 'Wedding / Event Hall')" class="area-btn bg-white text-taupe border border-hairline rounded-xl py-2.5 px-2 text-xs font-semibold hover:border-espresso/40 transition">
-                Event Venue
-              </button>
+              <button type="button" onclick="selectArea(this, 'Maison & Café (Indoor)')" class="area-btn active bg-espresso text-linen border border-espresso rounded-xl py-2.5 px-2 text-xs font-semibold transition">Café Indoor</button>
+              <button type="button" onclick="selectArea(this, 'Garden / Courtyard')" class="area-btn bg-white text-taupe border border-hairline rounded-xl py-2.5 px-2 text-xs font-semibold hover:border-espresso/40 transition">Garden Area</button>
+              <button type="button" onclick="selectArea(this, 'Wedding / Event Hall')" class="area-btn bg-white text-taupe border border-hairline rounded-xl py-2.5 px-2 text-xs font-semibold hover:border-espresso/40 transition">Event Venue</button>
             </div>
             <input type="hidden" id="res-area" value="Maison & Café (Indoor)" />
           </div>
@@ -392,20 +292,16 @@
             <input type="text" id="res-catatan" placeholder="Contoh: Survei lokasi wedding, meja dekat jendela, atau dekorasi ulang tahun" class="w-full bg-white border border-hairline rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-terracotta" />
           </div>
 
-          <button type="submit" class="w-full bg-terracotta hover:bg-terracottaHover text-white font-semibold py-4 rounded-xl text-xs sm:text-sm uppercase tracking-widest transition shadow-lg">
-            Kirim Pengajuan via WhatsApp
-          </button>
+          <button type="submit" class="w-full bg-terracotta hover:bg-terracottaHover text-white font-semibold py-4 rounded-xl text-xs sm:text-sm uppercase tracking-widest transition shadow-lg">Kirim Pengajuan via WhatsApp</button>
         </form>
       </div>
     </div>
   </section>
-
-  <!-- ================= LOCATION & SOCIAL CHANNELS ================= -->
-  <section id="lokasi" class="max-w-6xl mx-auto px-4 sm:px-6 pb-12">
-    <div class="bg-travertine border border-hairline rounded-3xl p-6 sm:p-10">
-      <div class="grid md:grid-cols-12 gap-8 items-center">
-        <div class="md:col-span-7">
-          <div class="text-terracotta text-xs font-bold uppercase tracking-[0.22em]">Lokasi Estate</div>
+    <section id="lokasi" class="max-w-6xl mx-auto px-4 sm:px-6 pb-12">
+    <div class="bg-travertine border border-hairline rounded-3xl p-6 sm:p-10 shadow-sm">
+      <div class="grid lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-7">
+          <div class="text-terracotta text-xs font-bold uppercase tracking-[0.22em]">Profil & Kontak Resmi</div>
           <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-espresso mt-1">Le PARLA — Maison & Café</h2>
 
           <div class="mt-6 space-y-4 text-sm">
@@ -413,9 +309,7 @@
               <span class="w-9 h-9 rounded-xl bg-espresso text-gold flex items-center justify-center shrink-0">📍</span>
               <div>
                 <div class="font-bold text-espresso">Alamat & Area Parkir Luas</div>
-                <p class="text-taupe mt-0.5 leading-relaxed">
-                  Jalan Pamekasan, Parit Lalang, Kec. Rangkui, Kota Pangkal Pinang, Kepulauan Bangka Belitung 33684
-                </p>
+                <p class="text-taupe mt-0.5 leading-relaxed">Jalan Pamekasan, Parit Lalang, Kec. Rangkui, Kota Pangkal Pinang, Kepulauan Bangka Belitung 33684</p>
               </div>
             </div>
 
@@ -428,53 +322,89 @@
             </div>
 
             <div class="flex items-start gap-3.5">
-              <span class="w-9 h-9 rounded-xl bg-espresso text-gold flex items-center justify-center shrink-0">📱</span>
+              <span class="w-9 h-9 rounded-xl bg-espresso text-gold flex items-center justify-center shrink-0">📞</span>
               <div>
-                <div class="font-bold text-espresso">WhatsApp & Media Sosial Resmi</div>
-                <p class="text-taupe mt-0.5">WA: 0851-8577-8577 • IG: @leparla.cafe & @le_parla • TikTok: @le.parla</p>
+                <div class="font-bold text-espresso">WhatsApp Reservasi & Informasi</div>
+                <a href="https://wa.me/6285185778577" target="_blank" rel="noopener noreferrer" class="text-terracotta font-semibold hover:underline mt-0.5 inline-block">+62 851-8577-8577 (0851-8577-8577)</a>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="md:col-span-5 flex flex-col gap-3">
-          <a
-            href="https://www.google.com/maps/search/?api=1&query=Le+Parla+Maison+Cafe+Pangkal+Pinang"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="w-full bg-espresso hover:bg-mocha text-linen font-semibold py-4 px-6 rounded-2xl text-xs uppercase tracking-widest text-center transition shadow-md flex items-center justify-center gap-2"
-          >
-            <span>Buka Rute Google Maps</span>
+        <div class="lg:col-span-5 space-y-3">
+          <div class="text-[11px] font-bold uppercase tracking-[0.2em] text-taupe mb-1">Terhubung Dengan Kami</div>
+
+          <a href="https://wa.me/6285185778577?text=Halo%20Le%20PARLA%20Maison%20%26%20Caf%C3%A9%2C%20saya%20ingin%20bertanya%20seputar%20menu%20atau%20reservasi%20tempat." target="_blank" rel="noopener noreferrer" class="w-full bg-olive hover:opacity-95 text-white font-semibold py-3.5 px-5 rounded-2xl text-xs sm:text-sm transition shadow-md flex items-center justify-between">
+            <span class="flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/></svg>
+              <span>WhatsApp • 0851-8577-8577</span>
+            </span>
+            <span>↗</span>
           </a>
-          <a
-            href="https://wa.me/6285185778577?text=Halo%20Le%20PARLA%20Maison%20%26%20Caf%C3%A9%2C%20saya%20ingin%20bertanya%20seputar%20menu%20atau%20reservasi%20tempat."
-            target="_blank"
-            rel="noopener noreferrer"
-            class="w-full bg-olive hover:opacity-95 text-white font-semibold py-4 px-6 rounded-2xl text-xs uppercase tracking-widest text-center transition shadow-md flex items-center justify-center gap-2"
-          >
-            <span>Chat WhatsApp (0851-8577-8577)</span>
-          </a>
+
+          <div class="grid grid-cols-2 gap-2.5">
+            <a href="https://www.instagram.com/leparla.cafe" target="_blank" rel="noopener noreferrer" class="bg-linen hover:bg-white border border-hairline hover:border-espresso/40 text-espresso p-3.5 rounded-2xl transition flex flex-col justify-between">
+              <div class="flex items-center justify-between text-terracotta mb-1">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                <span class="text-xs text-taupe">↗</span>
+              </div>
+              <div class="text-xs font-bold text-espresso">@leparla.cafe</div>
+              <div class="text-[10px] text-taupe">Instagram Café</div>
+            </a>
+
+            <a href="https://www.instagram.com/le_parla" target="_blank" rel="noopener noreferrer" class="bg-linen hover:bg-white border border-hairline hover:border-espresso/40 text-espresso p-3.5 rounded-2xl transition flex flex-col justify-between">
+              <div class="flex items-center justify-between text-terracotta mb-1">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                <span class="text-xs text-taupe">↗</span>
+              </div>
+              <div class="text-xs font-bold text-espresso">@le_parla</div>
+              <div class="text-[10px] text-taupe">Instagram Venue</div>
+            </a>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2.5">
+            <a href="https://www.tiktok.com/@le.parla" target="_blank" rel="noopener noreferrer" class="bg-linen hover:bg-white border border-hairline hover:border-espresso/40 text-espresso p-3.5 rounded-2xl transition flex flex-col justify-between">
+              <div class="flex items-center justify-between text-espresso mb-1">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+                <span class="text-xs text-taupe">↗</span>
+              </div>
+              <div class="text-xs font-bold text-espresso">@le.parla</div>
+              <div class="text-[10px] text-taupe">TikTok Resmi</div>
+            </a>
+
+            <a href="https://www.google.com/maps/search/?api=1&query=Le+Parla+Maison+Cafe+Pangkal+Pinang" target="_blank" rel="noopener noreferrer" class="bg-espresso hover:bg-mocha text-linen p-3.5 rounded-2xl transition flex flex-col justify-between shadow-sm">
+              <div class="flex items-center justify-between text-gold mb-1">
+                <span class="text-sm">📍</span>
+                <span class="text-xs text-linen/70">↗</span>
+              </div>
+              <div class="text-xs font-bold text-linen">Google Maps</div>
+              <div class="text-[10px] text-linen/70">Petunjuk Arah</div>
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ================= EDITORIAL FOOTER ================= -->
   <footer class="border-t border-hairline mt-6 py-10 text-center text-xs text-taupe px-4">
-    <div class="w-10 h-10 rounded-full border border-gold/50 bg-espresso text-gold flex items-center justify-center font-serif text-base font-bold mx-auto mb-3">
-      LP
-    </div>
+    <div class="w-10 h-10 rounded-full border border-gold/50 bg-espresso text-gold flex items-center justify-center font-serif text-base font-bold mx-auto mb-3">LP</div>
     <div class="font-serif text-xl font-bold text-espresso tracking-[0.18em]">LE PARLA</div>
-    <div class="uppercase tracking-[0.26em] text-[10px] mt-0.5 mb-2">Maison & Café • Memories Factory</div>
+    <div class="uppercase tracking-[0.26em] text-[10px] mt-0.5 mb-4">Maison & Café • Memories Factory</div>
+
+    <div class="flex flex-wrap items-center justify-center gap-2.5 max-w-lg mx-auto mb-5">
+      <a href="https://wa.me/6285185778577" target="_blank" rel="noopener noreferrer" class="bg-travertine hover:bg-espresso hover:text-linen border border-hairline px-3.5 py-1.5 rounded-full text-[11px] font-semibold text-espresso transition">WA: 0851-8577-8577</a>
+      <a href="https://www.instagram.com/leparla.cafe" target="_blank" rel="noopener noreferrer" class="bg-travertine hover:bg-espresso hover:text-linen border border-hairline px-3.5 py-1.5 rounded-full text-[11px] font-semibold text-espresso transition">IG: @leparla.cafe</a>
+      <a href="https://www.instagram.com/le_parla" target="_blank" rel="noopener noreferrer" class="bg-travertine hover:bg-espresso hover:text-linen border border-hairline px-3.5 py-1.5 rounded-full text-[11px] font-semibold text-espresso transition">IG: @le_parla</a>
+      <a href="https://www.tiktok.com/@le.parla" target="_blank" rel="noopener noreferrer" class="bg-travertine hover:bg-espresso hover:text-linen border border-hairline px-3.5 py-1.5 rounded-full text-[11px] font-semibold text-espresso transition">TikTok: @le.parla</a>
+    </div>
+
     <p>Jalan Pamekasan, Parit Lalang, Kec. Rangkui, Kota Pangkal Pinang</p>
     <p class="mt-2 opacity-70">© 2026 Le PARLA — Simple. Timeless. Premium.</p>
   </footer>
 
-  <!-- ================= TOAST & CHECKOUT DOCK ================= -->
   <div id="toast-notif" class="fixed top-20 left-1/2 -translate-x-1/2 z-50 pointer-events-none opacity-0 transition-all duration-300">
     <div class="bg-espresso text-linen border border-gold/40 px-4 py-2.5 rounded-full shadow-2xl text-xs font-medium flex items-center gap-2">
-      <span class="text-gold">✓</span>
-      <span id="toast-message">Menu ditambahkan ke pesanan</span>
+      <span class="text-gold">✓</span><span id="toast-message">Menu ditambahkan ke pesanan</span>
     </div>
   </div>
 
@@ -487,13 +417,10 @@
           <div id="bar-total-price" class="text-sm sm:text-base font-bold text-gold">Rp 0</div>
         </div>
       </div>
-      <span class="bg-terracotta text-white text-xs font-semibold uppercase tracking-wider px-4 py-2.5 rounded-xl">
-        Review & Pesan →
-      </span>
+      <span class="bg-terracotta text-white text-xs font-semibold uppercase tracking-wider px-4 py-2.5 rounded-xl">Review & Pesan →</span>
     </button>
   </div>
 
-  <!-- ================= MODAL KUSTOMISASI VARIAN MENU ================= -->
   <div id="variant-modal" class="fixed inset-0 z-50 hidden flex items-end sm:items-center justify-center">
     <div onclick="closeVariantModal()" class="absolute inset-0 bg-espresso/70 backdrop-blur-sm"></div>
     <div class="relative w-full max-w-md bg-linen rounded-t-3xl sm:rounded-3xl shadow-2xl border border-hairline overflow-hidden z-10">
@@ -501,7 +428,6 @@
         <img id="var-img" src="" alt="" class="w-full h-full object-cover" />
         <button onclick="closeVariantModal()" class="absolute top-3.5 right-3.5 w-8 h-8 rounded-full bg-espresso/80 text-linen flex items-center justify-center text-sm font-bold">✕</button>
       </div>
-
       <div class="p-5 sm:p-6 space-y-4">
         <div>
           <span id="var-cat" class="text-[11px] font-bold uppercase tracking-widest text-terracotta"></span>
@@ -509,30 +435,23 @@
           <p id="var-desc" class="text-xs text-taupe mt-1 leading-relaxed"></p>
           <div id="var-price" class="text-base font-bold text-espresso mt-2"></div>
         </div>
-
         <div id="var-options-area" class="space-y-3 pt-2 border-t border-hairline"></div>
-
         <div>
           <label class="block text-[11px] font-bold uppercase tracking-wider text-taupe mb-1">Catatan Tambahan (Opsional)</label>
           <input type="text" id="var-note" placeholder="Contoh: Extra hot, tanpa kayu manis, atau potong 2" class="w-full bg-white border border-hairline rounded-xl px-3.5 py-2 text-xs sm:text-sm focus:outline-none focus:border-terracotta" />
         </div>
-
         <div class="flex items-center gap-3 pt-2">
           <div class="flex items-center gap-3 bg-travertine border border-hairline rounded-xl px-3 py-2.5">
             <button type="button" onclick="changeModalQty(-1)" class="w-6 h-6 rounded-lg bg-white text-espresso font-bold text-sm">-</button>
             <span id="var-qty" class="text-sm font-bold min-w-[18px] text-center">1</span>
             <button type="button" onclick="changeModalQty(1)" class="w-6 h-6 rounded-lg bg-espresso text-linen font-bold text-sm">+</button>
           </div>
-
-          <button type="button" onclick="confirmAddToCart()" class="flex-1 bg-terracotta hover:bg-terracottaHover text-white font-semibold py-3.5 rounded-xl text-xs sm:text-sm uppercase tracking-wider transition shadow-md">
-            Tambah ke Pesanan
-          </button>
+          <button type="button" onclick="confirmAddToCart()" class="flex-1 bg-terracotta hover:bg-terracottaHover text-white font-semibold py-3.5 rounded-xl text-xs sm:text-sm uppercase tracking-wider transition shadow-md">Tambah ke Pesanan</button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ================= SLIDE-OVER CART DRAWER ================= -->
   <div id="cart-modal" class="fixed inset-0 z-50 hidden">
     <div onclick="closeCart()" class="absolute inset-0 bg-espresso/70 backdrop-blur-sm"></div>
     <div class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-linen shadow-2xl flex flex-col">
@@ -543,17 +462,13 @@
         </div>
         <button onclick="closeCart()" class="w-9 h-9 rounded-full bg-white border border-hairline flex items-center justify-center text-espresso font-bold">✕</button>
       </div>
-
       <div id="cart-items-container" class="flex-1 overflow-y-auto p-5 space-y-3"></div>
-
       <form onsubmit="checkoutWhatsApp(event)" class="p-5 border-t border-hairline bg-travertine space-y-3">
         <div class="flex items-center justify-between text-sm font-bold text-espresso pb-2.5 border-b border-hairline">
           <span>Total Estimasi</span>
           <span id="modal-total-price" class="text-xl font-serif text-terracotta">Rp 0</span>
         </div>
-
         <input type="text" id="order-nama" required placeholder="Nama Pemesan *" class="w-full bg-white border border-hairline rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-terracotta" />
-
         <div class="grid grid-cols-2 gap-2.5">
           <select id="order-tipe" onchange="toggleMejaInput(this.value)" class="w-full bg-white border border-hairline rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-terracotta">
             <option value="Dine-in (Makan di Tempat)">Dine-in (Di Tempat)</option>
@@ -561,19 +476,11 @@
           </select>
           <input type="text" id="order-meja" placeholder="No. Meja (Opsional)" class="w-full bg-white border border-hairline rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-terracotta" />
         </div>
-
-        <button type="submit" class="w-full bg-olive hover:opacity-95 text-white font-semibold py-4 rounded-xl text-xs sm:text-sm uppercase tracking-widest transition shadow-md">
-          Kirim Pesanan ke WhatsApp
-        </button>
+        <button type="submit" class="w-full bg-olive hover:opacity-95 text-white font-semibold py-4 rounded-xl text-xs sm:text-sm uppercase tracking-widest transition shadow-md">Kirim Pesanan ke WhatsApp</button>
       </form>
     </div>
   </div>
-
-  <!-- ================= DATA & LOGIKA INTERAKTIF ================= -->
-  <script>
-    // =========================================================================
-    // PENGATURAN DATA LE PARLA (EDIT BAGIAN INI SAAT REVISI MENU DARI OWNER)
-    // =========================================================================
+    <script>
     const CAFE_CONFIG = {
       namaKafe: "Le PARLA - Maison & Café",
       nomorWA: "6285185778577",
@@ -582,130 +489,20 @@
     };
 
     const MENU_ITEMS = [
-      {
-        id: 1,
-        nama: "Le PARLA Signature Latte",
-        kategori: "Specialty Coffee",
-        tipe: "drink",
-        harga: 32000,
-        deskripsi: "Espresso house blend lembut dengan susu segar dan sentuhan gula aren karamel.",
-        foto: "https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=700&q=80",
-        badge: "Signature"
-      },
-      {
-        id: 2,
-        nama: "Spanish Cortado",
-        kategori: "Specialty Coffee",
-        tipe: "drink",
-        harga: 30000,
-        deskripsi: "Perpaduan seimbang double ristretto dengan steamed milk tekstur silky.",
-        foto: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=700&q=80",
-        badge: ""
-      },
-      {
-        id: 3,
-        nama: "Classic Cappuccino",
-        kategori: "Specialty Coffee",
-        tipe: "drink",
-        harga: 28000,
-        deskripsi: "Kopi espresso klasik dengan microfoam tebal dan taburan cokelat bubuk.",
-        foto: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=700&q=80",
-        badge: ""
-      },
-      {
-        id: 4,
-        nama: "Manual Brew V60",
-        kategori: "Specialty Coffee",
-        tipe: "drink",
-        harga: 35000,
-        deskripsi: "Seduhan manual biji kopi single origin pilihan dengan karakter aroma floral & fruity.",
-        foto: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=700&q=80",
-        badge: "Single Origin"
-      },
-      {
-        id: 5,
-        nama: "Mediterranean Citrus Tonic",
-        kategori: "Signature Beverages",
-        tipe: "drink",
-        harga: 36000,
-        deskripsi: "Kesegaran espresso dengan air tonik dingin, irisan jeruk sunkist, dan rosemary.",
-        foto: "https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=700&q=80",
-        badge: "Best Seller"
-      },
-      {
-        id: 6,
-        nama: "Ceremonial Matcha Latte",
-        kategori: "Signature Beverages",
-        tipe: "drink",
-        harga: 38000,
-        deskripsi: "Bubuk matcha Uji Jepang autentik berpadu dengan susu creamy yang menenangkan.",
-        foto: "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=700&q=80",
-        badge: ""
-      },
-      {
-        id: 7,
-        nama: "Artisan Butter Croissant",
-        kategori: "Fresh Bakery",
-        tipe: "bakery",
-        harga: 26000,
-        deskripsi: "Croissant renyah berlapis dengan mentega Prancis premium, dipanggang segar.",
-        foto: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=700&q=80",
-        badge: "Fresh Baked"
-      },
-      {
-        id: 8,
-        nama: "Almond Frangipane Croissant",
-        kategori: "Fresh Bakery",
-        tipe: "bakery",
-        harga: 34000,
-        deskripsi: "Croissant klasik dengan isian krim almond manis gurih dan taburan almond panggang.",
-        foto: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=700&q=80",
-        badge: ""
-      },
-      {
-        id: 9,
-        nama: "Burnt Basque Cheesecake",
-        kategori: "Fresh Bakery",
-        tipe: "bakery",
-        harga: 38000,
-        deskripsi: "Kue keju panggang lembut di bagian dalam dengan lapisan karamel khas di atasnya.",
-        foto: "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=700&q=80",
-        badge: "Favorit"
-      },
-      {
-        id: 10,
-        nama: "Nasi Campur Le PARLA",
-        kategori: "Comforting Meals",
-        tipe: "food",
-        harga: 45000,
-        deskripsi: "Sajian nasi hangat lengkap dengan lauk ayam bumbu rempah, urap segar, dan kerupuk udang.",
-        foto: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=700&q=80",
-        badge: "Chef's Pick"
-      },
-      {
-        id: 11,
-        nama: "Creamy Truffle Pasta",
-        kategori: "Comforting Meals",
-        tipe: "food",
-        harga: 48000,
-        deskripsi: "Spaghetti al dente dengan saus krim jamur champignon dan aroma minyak truffle.",
-        foto: "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=700&q=80",
-        badge: ""
-      },
-      {
-        id: 12,
-        nama: "Pan-Seared Chicken Herb Rice",
-        kategori: "Comforting Meals",
-        tipe: "food",
-        harga: 44000,
-        deskripsi: "Dada ayam panggang bumbu herbal Mediterania disajikan dengan butter rice hangat.",
-        foto: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=700&q=80",
-        badge: ""
-      }
+      { id: 1, nama: "Le PARLA Signature Latte", kategori: "Specialty Coffee", tipe: "drink", harga: 32000, deskripsi: "Espresso house blend lembut dengan susu segar dan sentuhan gula aren karamel.", foto: "https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=700&q=80", badge: "Signature" },
+      { id: 2, nama: "Spanish Cortado", kategori: "Specialty Coffee", tipe: "drink", harga: 30000, deskripsi: "Perpaduan seimbang double ristretto dengan steamed milk tekstur silky.", foto: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=700&q=80", badge: "" },
+      { id: 3, nama: "Classic Cappuccino", kategori: "Specialty Coffee", tipe: "drink", harga: 28000, deskripsi: "Kopi espresso klasik dengan microfoam tebal dan taburan cokelat bubuk.", foto: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=700&q=80", badge: "" },
+      { id: 4, nama: "Manual Brew V60", kategori: "Specialty Coffee", tipe: "drink", harga: 35000, deskripsi: "Seduhan manual biji kopi single origin pilihan dengan karakter aroma floral & fruity.", foto: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=700&q=80", badge: "Single Origin" },
+      { id: 5, nama: "Mediterranean Citrus Tonic", kategori: "Signature Beverages", tipe: "drink", harga: 36000, deskripsi: "Kesegaran espresso dengan air tonik dingin, irisan jeruk sunkist, dan rosemary.", foto: "https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=700&q=80", badge: "Best Seller" },
+      { id: 6, nama: "Ceremonial Matcha Latte", kategori: "Signature Beverages", tipe: "drink", harga: 38000, deskripsi: "Bubuk matcha Uji Jepang autentik berpadu dengan susu creamy yang menenangkan.", foto: "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=700&q=80", badge: "" },
+      { id: 7, nama: "Artisan Butter Croissant", kategori: "Fresh Bakery", tipe: "bakery", harga: 26000, deskripsi: "Croissant renyah berlapis dengan mentega Prancis premium, dipanggang segar.", foto: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=700&q=80", badge: "Fresh Baked" },
+      { id: 8, nama: "Almond Frangipane Croissant", kategori: "Fresh Bakery", tipe: "bakery", harga: 34000, deskripsi: "Croissant klasik dengan isian krim almond manis gurih dan taburan almond panggang.", foto: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=700&q=80", badge: "" },
+      { id: 9, nama: "Burnt Basque Cheesecake", kategori: "Fresh Bakery", tipe: "bakery", harga: 38000, deskripsi: "Kue keju panggang lembut di bagian dalam dengan lapisan karamel khas di atasnya.", foto: "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=700&q=80", badge: "Favorit" },
+      { id: 10, nama: "Nasi Campur Le PARLA", kategori: "Comforting Meals", tipe: "food", harga: 45000, deskripsi: "Sajian nasi hangat lengkap dengan lauk ayam bumbu rempah, urap segar, dan kerupuk udang.", foto: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=700&q=80", badge: "Chef's Pick" },
+      { id: 11, nama: "Creamy Truffle Pasta", kategori: "Comforting Meals", tipe: "food", harga: 48000, deskripsi: "Spaghetti al dente dengan saus krim jamur champignon dan aroma minyak truffle.", foto: "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=700&q=80", badge: "" },
+      { id: 12, nama: "Pan-Seared Chicken Herb Rice", kategori: "Comforting Meals", tipe: "food", harga: 44000, deskripsi: "Dada ayam panggang bumbu herbal Mediterania disajikan dengan butter rice hangat.", foto: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=700&q=80", badge: "" }
     ];
-    // =========================================================================
-
-    let activeCategory = "Semua";
+          let activeCategory = "Semua";
     let searchQuery = "";
     let cart = [];
     let currentModalItem = null;
@@ -715,24 +512,13 @@
 
     const categories = ["Semua", "Specialty Coffee", "Signature Beverages", "Fresh Bakery", "Comforting Meals"];
 
-    function formatRupiah(angka) {
-      return "Rp " + angka.toLocaleString("id-ID");
-    }
+    function formatRupiah(angka) { return "Rp " + angka.toLocaleString("id-ID"); }
 
-    // Cek Hari & Jam Operasional WIB (Senin Tutup, Selasa-Minggu 10.00 - 22.00)
     function updateLiveStatus() {
       try {
         const now = new Date();
-        const wibDay = new Intl.DateTimeFormat("en-US", {
-          timeZone: "Asia/Jakarta",
-          weekday: "short"
-        }).format(now);
-        const wibHour = Number(new Intl.DateTimeFormat("en-US", {
-          timeZone: "Asia/Jakarta",
-          hour: "numeric",
-          hour12: false
-        }).format(now));
-
+        const wibDay = new Intl.DateTimeFormat("en-US", { timeZone: "Asia/Jakarta", weekday: "short" }).format(now);
+        const wibHour = Number(new Intl.DateTimeFormat("en-US", { timeZone: "Asia/Jakarta", hour: "numeric", hour12: false }).format(now));
         const dot = document.getElementById("live-status-dot");
         const text = document.getElementById("live-status-text");
 
@@ -765,43 +551,17 @@
       const container = document.getElementById("category-tabs");
       container.innerHTML = categories.map(cat => {
         const isActive = cat === activeCategory;
-        return `
-          <button
-            onclick="selectCategory('${cat}')"
-            class="whitespace-nowrap px-4 py-2.5 rounded-full text-xs font-semibold tracking-wide transition border ${
-              isActive
-                ? "bg-espresso text-linen border-espresso shadow-sm"
-                : "bg-linen text-taupe border-hairline hover:border-espresso/40"
-            }"
-          >
-            ${cat}
-          </button>
-        `;
+        return `<button onclick="selectCategory('${cat}')" class="whitespace-nowrap px-4 py-2.5 rounded-full text-xs font-semibold tracking-wide transition border ${isActive ? "bg-espresso text-linen border-espresso shadow-sm" : "bg-linen text-taupe border-hairline hover:border-espresso/40"}">${cat}</button>`;
       }).join("");
     }
 
-    function selectCategory(cat) {
-      activeCategory = cat;
-      renderCategories();
-      renderMenu();
-    }
-
-    function handleSearch(val) {
-      searchQuery = val.toLowerCase().trim();
-      renderMenu();
-    }
-
-    function getItemTotalQty(id) {
-      return cart.filter(c => c.id === id).reduce((sum, item) => sum + item.qty, 0);
-    }
+    function selectCategory(cat) { activeCategory = cat; renderCategories(); renderMenu(); }
+    function handleSearch(val) { searchQuery = val.toLowerCase().trim(); renderMenu(); }
+    function getItemTotalQty(id) { return cart.filter(c => c.id === id).reduce((sum, item) => sum + item.qty, 0); }
 
     function renderMenu() {
       const grid = document.getElementById("menu-grid");
-      const filtered = MENU_ITEMS.filter(item => {
-        const matchCat = activeCategory === "Semua" || item.kategori === activeCategory;
-        const matchSearch = item.nama.toLowerCase().includes(searchQuery) || item.deskripsi.toLowerCase().includes(searchQuery);
-        return matchCat && matchSearch;
-      });
+      const filtered = MENU_ITEMS.filter(item => (activeCategory === "Semua" || item.kategori === activeCategory) && (item.nama.toLowerCase().includes(searchQuery) || item.deskripsi.toLowerCase().includes(searchQuery)));
 
       if (filtered.length === 0) {
         grid.innerHTML = `<div class="col-span-full text-center py-12 text-taupe text-sm">Menu yang dicari tidak ditemukan.</div>`;
@@ -814,29 +574,19 @@
           <div onclick="openVariantModal(${item.id})" class="cursor-pointer group bg-linen border border-hairline rounded-3xl overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-gold/50 transition-all duration-300">
             <div>
               <div class="relative aspect-[4/3] bg-travertine overflow-hidden">
-                <img
-                  src="${item.foto}"
-                  alt="${item.nama}"
-                  loading="lazy"
-                  onerror="this.onerror=null;this.src='https://placehold.co/600x450/F2ECE1/1C1410?text=Le+PARLA';"
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+                <img src="${item.foto}" alt="${item.nama}" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x450/F2ECE1/1C1410?text=Le+PARLA';" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 ${item.badge ? `<span class="absolute top-3 left-3 bg-espresso/90 backdrop-blur-sm text-gold border border-gold/30 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">${item.badge}</span>` : ""}
                 ${totalQty > 0 ? `<span class="absolute top-3 right-3 bg-terracotta text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center shadow-md">${totalQty}</span>` : ""}
               </div>
-
               <div class="p-4 sm:p-5">
                 <div class="text-[10px] font-bold uppercase tracking-[0.18em] text-terracotta">${item.kategori}</div>
                 <h3 class="font-serif text-lg sm:text-2xl font-semibold text-espresso leading-snug mt-1 group-hover:text-terracotta transition">${item.nama}</h3>
                 <p class="text-xs text-taupe mt-1.5 line-clamp-2 leading-relaxed">${item.deskripsi}</p>
               </div>
             </div>
-
             <div class="px-4 pb-4 sm:px-5 sm:pb-5 pt-2 flex items-center justify-between gap-2 border-t border-hairline/60">
               <span class="font-bold text-sm sm:text-base text-espresso">${formatRupiah(item.harga)}</span>
-              <span class="bg-travertine group-hover:bg-espresso group-hover:text-linen text-espresso border border-hairline text-xs font-semibold px-3.5 py-2 rounded-xl transition">
-                + Pilih
-              </span>
+              <span class="bg-travertine group-hover:bg-espresso group-hover:text-linen text-espresso border border-hairline text-xs font-semibold px-3.5 py-2 rounded-xl transition">+ Pilih</span>
             </div>
           </div>
         `;
@@ -846,9 +596,7 @@
     function openVariantModal(id) {
       const item = MENU_ITEMS.find(m => m.id === id);
       if (!item) return;
-
-      currentModalItem = item;
-      currentModalQty = 1;
+      currentModalItem = item; currentModalQty = 1;
       document.getElementById("var-img").src = item.foto;
       document.getElementById("var-cat").textContent = item.kategori;
       document.getElementById("var-title").textContent = item.nama;
@@ -859,103 +607,63 @@
 
       const optArea = document.getElementById("var-options-area");
       if (item.tipe === "drink") {
-        selectedOpt1 = "Iced";
-        selectedOpt2 = "Normal Sugar";
+        selectedOpt1 = "Iced"; selectedOpt2 = "Normal Sugar";
         optArea.innerHTML = `
-          <div>
-            <label class="block text-[11px] font-bold uppercase tracking-wider text-taupe mb-1.5">Penyajian</label>
+          <div><label class="block text-[11px] font-bold uppercase tracking-wider text-taupe mb-1.5">Penyajian</label>
             <div class="grid grid-cols-2 gap-2">
               <button type="button" onclick="setOpt1(this, 'Iced')" class="opt1-btn bg-espresso text-linen border border-espresso rounded-xl py-2 text-xs font-semibold">Iced (Dingin)</button>
               <button type="button" onclick="setOpt1(this, 'Hot')" class="opt1-btn bg-white text-taupe border border-hairline rounded-xl py-2 text-xs font-semibold">Hot (Panas)</button>
             </div>
           </div>
-          <div>
-            <label class="block text-[11px] font-bold uppercase tracking-wider text-taupe mb-1.5">Takaran Gula</label>
+          <div><label class="block text-[11px] font-bold uppercase tracking-wider text-taupe mb-1.5">Takaran Gula</label>
             <div class="grid grid-cols-2 gap-2">
               <button type="button" onclick="setOpt2(this, 'Normal Sugar')" class="opt2-btn bg-espresso text-linen border border-espresso rounded-xl py-2 text-xs font-semibold">Normal Sugar</button>
               <button type="button" onclick="setOpt2(this, 'Less Sugar')" class="opt2-btn bg-white text-taupe border border-hairline rounded-xl py-2 text-xs font-semibold">Less Sugar</button>
             </div>
-          </div>
-        `;
+          </div>`;
       } else if (item.tipe === "bakery") {
-        selectedOpt1 = "Warmed (Hangat)";
-        selectedOpt2 = "";
+        selectedOpt1 = "Warmed (Hangat)"; selectedOpt2 = "";
         optArea.innerHTML = `
-          <div>
-            <label class="block text-[11px] font-bold uppercase tracking-wider text-taupe mb-1.5">Saran Penyajian</label>
+          <div><label class="block text-[11px] font-bold uppercase tracking-wider text-taupe mb-1.5">Saran Penyajian</label>
             <div class="grid grid-cols-2 gap-2">
               <button type="button" onclick="setOpt1(this, 'Warmed (Hangat)')" class="opt1-btn bg-espresso text-linen border border-espresso rounded-xl py-2 text-xs font-semibold">Warmed (Dihangatkan)</button>
               <button type="button" onclick="setOpt1(this, 'Suhu Ruang')" class="opt1-btn bg-white text-taupe border border-hairline rounded-xl py-2 text-xs font-semibold">Suhu Ruang</button>
             </div>
-          </div>
-        `;
+          </div>`;
       } else {
-        selectedOpt1 = "Standard";
-        selectedOpt2 = "";
-        optArea.innerHTML = "";
+        selectedOpt1 = "Standard"; selectedOpt2 = ""; optArea.innerHTML = "";
       }
-
       document.getElementById("variant-modal").classList.remove("hidden");
     }
 
-    function closeVariantModal() {
-      document.getElementById("variant-modal").classList.add("hidden");
-    }
-
+    function closeVariantModal() { document.getElementById("variant-modal").classList.add("hidden"); }
     function setOpt1(btn, val) {
       selectedOpt1 = val;
-      document.querySelectorAll(".opt1-btn").forEach(b => {
-        b.className = "opt1-btn bg-white text-taupe border border-hairline rounded-xl py-2 text-xs font-semibold";
-      });
+      document.querySelectorAll(".opt1-btn").forEach(b => b.className = "opt1-btn bg-white text-taupe border border-hairline rounded-xl py-2 text-xs font-semibold");
       btn.className = "opt1-btn bg-espresso text-linen border border-espresso rounded-xl py-2 text-xs font-semibold";
     }
-
     function setOpt2(btn, val) {
       selectedOpt2 = val;
-      document.querySelectorAll(".opt2-btn").forEach(b => {
-        b.className = "opt2-btn bg-white text-taupe border border-hairline rounded-xl py-2 text-xs font-semibold";
-      });
+      document.querySelectorAll(".opt2-btn").forEach(b => b.className = "opt2-btn bg-white text-taupe border border-hairline rounded-xl py-2 text-xs font-semibold");
       btn.className = "opt2-btn bg-espresso text-linen border border-espresso rounded-xl py-2 text-xs font-semibold";
     }
-
-    function changeModalQty(delta) {
-      currentModalQty = Math.max(1, currentModalQty + delta);
-      document.getElementById("var-qty").textContent = currentModalQty;
-    }
+    function changeModalQty(delta) { currentModalQty = Math.max(1, currentModalQty + delta); document.getElementById("var-qty").textContent = currentModalQty; }
 
     function confirmAddToCart() {
       if (!currentModalItem) return;
       const note = document.getElementById("var-note").value.trim();
-      const varianParts = [selectedOpt1, selectedOpt2].filter(Boolean);
-      const varianStr = varianParts.join(", ");
+      const varianStr = [selectedOpt1, selectedOpt2].filter(Boolean).join(", ");
       const key = `${currentModalItem.id}|${varianStr}|${note}`;
-
       const existing = cart.find(c => c.key === key);
-      if (existing) {
-        existing.qty += currentModalQty;
-      } else {
-        cart.push({
-          key,
-          id: currentModalItem.id,
-          nama: currentModalItem.nama,
-          harga: currentModalItem.harga,
-          varian: varianStr,
-          catatan: note,
-          qty: currentModalQty
-        });
-      }
-
-      closeVariantModal();
-      syncCartUI();
-      showToast(`${currentModalItem.nama} ditambahkan`);
+      if (existing) { existing.qty += currentModalQty; }
+      else { cart.push({ key, id: currentModalItem.id, nama: currentModalItem.nama, harga: currentModalItem.harga, varian: varianStr, catatan: note, qty: currentModalQty }); }
+      closeVariantModal(); syncCartUI(); showToast(`${currentModalItem.nama} ditambahkan`);
     }
 
     function updateCartItemQty(index, delta) {
       if (!cart[index]) return;
       cart[index].qty += delta;
-      if (cart[index].qty <= 0) {
-        cart.splice(index, 1);
-      }
+      if (cart[index].qty <= 0) cart.splice(index, 1);
       syncCartUI();
     }
 
@@ -963,45 +671,24 @@
       renderMenu();
       const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
       const totalPrice = cart.reduce((sum, item) => sum + item.harga * item.qty, 0);
-
       document.getElementById("nav-cart-badge").textContent = totalItems;
       document.getElementById("bar-item-count").textContent = totalItems;
       document.getElementById("bar-total-price").textContent = formatRupiah(totalPrice);
       document.getElementById("modal-total-price").textContent = formatRupiah(totalPrice);
-
       const stickyBar = document.getElementById("sticky-cart-bar");
-      if (totalItems > 0) {
-        stickyBar.classList.remove("hidden");
-      } else {
-        stickyBar.classList.add("hidden");
-      }
-
-      if (!document.getElementById("cart-modal").classList.contains("hidden")) {
-        renderCartModalItems();
-      }
+      totalItems > 0 ? stickyBar.classList.remove("hidden") : stickyBar.classList.add("hidden");
+      if (!document.getElementById("cart-modal").classList.contains("hidden")) renderCartModalItems();
     }
 
-    function openCart() {
-      renderCartModalItems();
-      document.getElementById("cart-modal").classList.remove("hidden");
-    }
-
-    function closeCart() {
-      document.getElementById("cart-modal").classList.add("hidden");
-    }
+    function openCart() { renderCartModalItems(); document.getElementById("cart-modal").classList.remove("hidden"); }
+    function closeCart() { document.getElementById("cart-modal").classList.add("hidden"); }
 
     function renderCartModalItems() {
       const container = document.getElementById("cart-items-container");
       if (cart.length === 0) {
-        container.innerHTML = `
-          <div class="text-center py-14 text-taupe">
-            <div class="font-serif italic text-xl text-espresso">Keranjang Masih Kosong</div>
-            <p class="text-xs mt-1">Pilih kopi atau sajian favorit Anda dari katalog menu.</p>
-          </div>
-        `;
+        container.innerHTML = `<div class="text-center py-14 text-taupe"><div class="font-serif italic text-xl text-espresso">Keranjang Masih Kosong</div><p class="text-xs mt-1">Pilih kopi atau sajian favorit Anda dari katalog menu.</p></div>`;
         return;
       }
-
       container.innerHTML = cart.map((item, idx) => `
         <div class="bg-white border border-hairline rounded-2xl p-4 flex items-center justify-between gap-3 shadow-sm">
           <div class="flex-1">
@@ -1010,7 +697,6 @@
             ${item.catatan ? `<div class="text-[11px] italic text-taupe mt-0.5">Catatan: "${item.catatan}"</div>` : ""}
             <div class="text-xs font-bold text-espresso mt-1.5">${formatRupiah(item.harga * item.qty)}</div>
           </div>
-
           <div class="flex items-center gap-2 bg-travertine border border-hairline rounded-xl px-2 py-1">
             <button type="button" onclick="updateCartItemQty(${idx}, -1)" class="w-6 h-6 rounded-lg bg-white text-espresso font-bold text-xs">-</button>
             <span class="text-xs font-bold min-w-[16px] text-center">${item.qty}</span>
@@ -1022,22 +708,16 @@
 
     function toggleMejaInput(tipe) {
       const mejaInput = document.getElementById("order-meja");
-      if (tipe.includes("Takeaway")) {
-        mejaInput.classList.add("hidden");
-      } else {
-        mejaInput.classList.remove("hidden");
-      }
+      tipe.includes("Takeaway") ? mejaInput.classList.add("hidden") : mejaInput.classList.remove("hidden");
     }
 
     function checkoutWhatsApp(e) {
       e.preventDefault();
       if (cart.length === 0) return;
-
       const nama = document.getElementById("order-nama").value.trim();
       const tipe = document.getElementById("order-tipe").value;
       const meja = document.getElementById("order-meja").value.trim();
       const totalPrice = cart.reduce((sum, item) => sum + item.harga * item.qty, 0);
-
       const daftarText = cart.map((item, i) => {
         let line = `${i + 1}. *${item.nama}* (${item.qty}x) — ${formatRupiah(item.harga * item.qty)}`;
         if (item.varian) line += `\n   _${item.varian}_`;
@@ -1045,32 +725,19 @@
         return line;
       }).join("\n");
 
-      let pesan = `Halo *${CAFE_CONFIG.namaKafe}*, saya ingin memesan:\n\n`;
-      pesan += `${daftarText}\n\n`;
-      pesan += `*Total Estimasi: ${formatRupiah(totalPrice)}*\n`;
-      pesan += `-------------------------\n`;
-      pesan += `• Nama: ${nama}\n`;
-      pesan += `• Tipe: ${tipe}\n`;
-      if (meja && !tipe.includes("Takeaway")) {
-        pesan += `• No. Meja: ${meja}\n`;
-      }
+      let pesan = `Halo *${CAFE_CONFIG.namaKafe}*, saya ingin memesan:\n\n${daftarText}\n\n*Total Estimasi: ${formatRupiah(totalPrice)}*\n-------------------------\n• Nama: ${nama}\n• Tipe: ${tipe}\n`;
+      if (meja && !tipe.includes("Takeaway")) pesan += `• No. Meja: ${meja}\n`;
       pesan += `\nTerima kasih!`;
-
       window.open(`https://wa.me/${CAFE_CONFIG.nomorWA}?text=${encodeURIComponent(pesan)}`, "_blank");
     }
 
     function selectArea(btn, areaName) {
       document.getElementById("res-area").value = areaName;
-      document.querySelectorAll(".area-btn").forEach(b => {
-        b.className = "area-btn bg-white text-taupe border border-hairline rounded-xl py-2.5 px-2 text-xs font-semibold hover:border-espresso/40 transition";
-      });
+      document.querySelectorAll(".area-btn").forEach(b => b.className = "area-btn bg-white text-taupe border border-hairline rounded-xl py-2.5 px-2 text-xs font-semibold hover:border-espresso/40 transition");
       btn.className = "area-btn active bg-espresso text-linen border border-espresso rounded-xl py-2.5 px-2 text-xs font-semibold transition";
     }
 
-    function presetAcara(jenis) {
-      const select = document.getElementById("res-acara");
-      if (select) select.value = jenis;
-    }
+    function presetAcara(jenis) { const select = document.getElementById("res-acara"); if (select) select.value = jenis; }
 
     function submitReservation(e) {
       e.preventDefault();
@@ -1082,18 +749,9 @@
       const tamu = document.getElementById("res-tamu").value;
       const catatan = document.getElementById("res-catatan").value.trim();
 
-      let pesan = `Halo *${CAFE_CONFIG.namaKafe}*, saya ingin mengajukan reservasi / konsultasi:\n\n`;
-      pesan += `• Nama: ${nama}\n`;
-      pesan += `• Area Pilihan: ${area}\n`;
-      pesan += `• Keperluan: ${acara}\n`;
-      pesan += `• Tanggal: ${tanggal}\n`;
-      pesan += `• Jam: ${jam} WIB\n`;
-      pesan += `• Estimasi Tamu: ${tamu} Orang\n`;
-      if (catatan) {
-        pesan += `• Catatan: ${catatan}\n`;
-      }
+      let pesan = `Halo *${CAFE_CONFIG.namaKafe}*, saya ingin mengajukan reservasi / konsultasi:\n\n• Nama: ${nama}\n• Area Pilihan: ${area}\n• Keperluan: ${acara}\n• Tanggal: ${tanggal}\n• Jam: ${jam} WIB\n• Estimasi Tamu: ${tamu} Orang\n`;
+      if (catatan) pesan += `• Catatan: ${catatan}\n`;
       pesan += `\nMohon info ketersediaannya. Terima kasih!`;
-
       window.open(`https://wa.me/${CAFE_CONFIG.nomorWA}?text=${encodeURIComponent(pesan)}`, "_blank");
     }
 

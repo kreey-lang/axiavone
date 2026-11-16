@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AXIAVONE — AI-Powered Digital Solutions & Smart POS Systems</title>
+  <meta name="description" content="AXIAVONE Digital Solutions builds AI-powered Point of Sale (Adexa Kasir AI) and scalable digital infrastructure for modern SMEs in Indonesia." />
+  <meta name="keywords" content="AXIAVONE, AXIAVONE Digital Solutions, Adexa Kasir AI, AI POS Indonesia, Smart Retail Software, Web Development" />
+  <meta property="og:title" content="AXIAVONE — Digital Solutions & AI Systems" />
+  <meta property="og:description" content="Intelligent commerce software, AI retail analytics, and high-performance web infrastructure." />
+  <meta property="og:type" content="website" />
+
+  <!-- Structured Data (Schema.org) for Google Search Indexing -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "AXIAVONE Digital Solutions",
+    "alternateName": "AXIAVONE",
+    "description": "AI-powered Point of Sale and digital commerce solutions for modern businesses.",
+    "foundingDate": "2026",
+    "areaServed": "ID"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#070A10',
+            surface: '#0E1420',
+            surfaceLight: '#151E2E',
+            electric: '#2563EB',
+            cyber: '#06B6D4',
+            slateText: '#94A3B8'
+          },
+          fontFamily: {
+            display: ['"Space Grotesk"', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { background-color: #070A10; color: #F8FAFC; font-family: 'Plus Jakarta Sans', sans-serif; }
+    .cyber-grid {
+      background-size: 44px 44px;
+      background-image: linear-gradient(to right, rgba(6, 182, 212, 0.06) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(37, 99, 235, 0.06) 1px, transparent 1px);
+    }
+    .brand-gradient-text {
+      background: linear-gradient(135deg, #38BDF8 0%, #06B6D4 50%, #3B82F6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-cyber selection:text-obsidian">
+
+  <!-- ================= STICKY TECH NAVBAR ================= -->
+  <header class="sticky top-0 z-40 bg-obsidian/85 backdrop-blur-md border-b border-white/10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between">
+      <!-- Brand Logo SVG Icon + AXIAVONE Wordmark -->
+      <a href="#home" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-surface border border-cyan-500/30 flex items-center justify-center shadow-lg shadow-cyan-500/10">
+          <svg viewBox="0 0 64 64" class="w-7 h-7" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="axiaGrad" x1="8" y1="56" x2="56" y2="8" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#2563EB"/>
+                <stop offset="55%" stop-color="#06B6D4"/>
+                <stop offset="100%" stop-color="#67E8F9"/>
+              </linearGradient>
+            </defs>
+            <path d="M12 52L28 16L22 16L32 6L42 16L36 16L24 43L46 27L38 52L52 22" stroke="url(#axiaGrad)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-display text-xl font-bold tracking-[0.12em] text-white leading-none">AXIAVONE</span>
+          <span class="text-[9px] font-bold uppercase tracking-[0.26em] text-cyber mt-1">Digital Solutions</span>
+        </div>
+      </a>
+
+      <!-- Desktop Menu -->
+      <nav class="hidden md:flex items-center gap-8 text-xs font-semibold uppercase tracking-[0.14em] text-slateText">
+        <a href="#solutions" class="hover:text-white transition">Solutions</a>
+        <a href="#adexa-ai" class="hover:text-white transition">Adexa Kasir AI</a>
+        <a href="#architecture" class="hover:text-white transition">AI Engine</a>
+        <a href="#contact" class="hover:text-white transition">Contact</a>
+      </nav>
+
+      <!-- CTA & Mobile Toggle -->
+      <div class="flex items-center gap-3">
+        <a href="#contact" class="bg-gradient-to-r from-electric to-cyber hover:opacity-95 text-white text-xs font-bold uppercase tracking-wider px-4 py-2.5 rounded-xl shadow-lg shadow-cyan-500/20 transition">
+          Get In Touch
+        </a>
+        <button onclick="toggleNav()" aria-label="Menu" class="md:hidden p-2 text-white/80 hover:text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-surface border-t border-white/10 px-6 py-4 space-y-3 text-xs font-semibold uppercase tracking-widest text-slateText">
+      <a href="#solutions" onclick="toggleNav()" class="block py-1.5 hover:text-cyber">Solutions</a>
+      <a href="#adexa-ai" onclick="toggleNav()" class="block py-1.5 hover:text-cyber">Adexa Kasir AI</a>
+      <a href="#architecture" onclick="toggleNav()" class="block py-1.5 hover:text-cyber">AI Architecture</a>
+      <a href="#contact" onclick="toggleNav()" class="block py-1.5 hover:text-cyber">Contact & Inquiries</a>
+    </div>
+  </header>
+  <!-- ================= HERO SECTION ================= -->
+  <section id="home" class="relative overflow-hidden cyber-grid border-b border-white/10">
+    <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[540px] h-[320px] bg-electric/20 blur-[120px] pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-20 sm:py-28 relative z-10 text-center">
+      <div class="inline-flex items-center gap-2 bg-surfaceLight/90 border border-cyan-500/30 px-4 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-[0.2em] text-cyber mb-6">
+        <span class="w-2 h-2 rounded-full bg-cyber animate-pulse"></span>
+        <span>AI-Native Software & Commerce Infrastructure</span>
+      </div>
+
+      <h1 class="font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight max-w-4xl mx-auto leading-[1.08]">
+        Engineering <span class="brand-gradient-text">Intelligent Systems</span> for Next-Gen Businesses.
+      </h1>
+
+      <p class="mt-6 text-sm sm:text-lg text-slateText max-w-2xl mx-auto leading-relaxed">
+        AXIAVONE builds AI-powered Point of Sale platforms, automated business intelligence, and high-conversion web applications tailored for emerging enterprises across Indonesia.
+      </p>
+
+      <div class="mt-9 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#adexa-ai" class="w-full sm:w-auto bg-gradient-to-r from-electric to-cyber hover:opacity-95 text-white font-bold px-8 py-4 rounded-2xl text-xs sm:text-sm uppercase tracking-widest shadow-xl shadow-blue-600/25 transition">
+          Explore Adexa Kasir AI
+        </a>
+        <a href="#solutions" class="w-full sm:w-auto bg-surface hover:bg-surfaceLight border border-white/15 text-white font-semibold px-8 py-4 rounded-2xl text-xs sm:text-sm uppercase tracking-widest transition">
+          Our Capabilities
+        </a>
+      </div>
+
+      <!-- Metrics Bar -->
+      <div class="mt-16 pt-8 border-t border-white/10 grid grid-cols-3 gap-4 max-w-2xl mx-auto">
+        <div>
+          <div class="font-display text-2xl sm:text-3xl font-bold text-white">LLM-Driven</div>
+          <div class="text-xs text-slateText mt-1">Automated Sales Insights</div>
+        </div>
+        <div>
+          <div class="font-display text-2xl sm:text-3xl font-bold text-cyber">Cloud-First</div>
+          <div class="text-xs text-slateText mt-1">Real-Time Sync & Edge</div>
+        </div>
+        <div>
+          <div class="font-display text-2xl sm:text-3xl font-bold text-white">SME Focus</div>
+          <div class="text-xs text-slateText mt-1">Retail, F&B & Hospitality</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CORE SOLUTIONS ================= -->
+  <section id="solutions" class="max-w-6xl mx-auto px-4 sm:px-6 py-20">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <div class="text-xs font-bold uppercase tracking-[0.24em] text-cyber">What We Build</div>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-2">Scalable Digital Infrastructure</h2>
+      <p class="text-sm text-slateText mt-3">
+        Combining applied artificial intelligence with lightweight modern web engineering to eliminate operational bottlenecks.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-surface border border-white/10 hover:border-cyan-500/40 rounded-3xl p-7 transition">
+        <div class="w-11 h-11 rounded-2xl bg-electric/15 border border-electric/30 text-cyber flex items-center justify-center font-display font-bold text-lg mb-5">01</div>
+        <h3 class="font-display text-xl font-bold text-white">AI Point of Sale (POS)</h3>
+        <p class="text-xs sm:text-sm text-slateText mt-2.5 leading-relaxed">
+          Smart cashier and inventory management powered by large language models to forecast restocks and summarize daily revenue automatically.
+        </p>
+      </div>
+
+      <div class="bg-surface border border-white/10 hover:border-cyan-500/40 rounded-3xl p-7 transition">
+        <div class="w-11 h-11 rounded-2xl bg-cyan-500/15 border border-cyan-500/30 text-cyber flex items-center justify-center font-display font-bold text-lg mb-5">02</div>
+        <h3 class="font-display text-xl font-bold text-white">Digital Commerce Portals</h3>
+        <p class="text-xs sm:text-sm text-slateText mt-2.5 leading-relaxed">
+          Fast, mobile-first web storefronts, interactive digital menus, and instant WhatsApp checkout pipelines for hospitality and retail brands.
+        </p>
+      </div>
+
+      <div class="bg-surface border border-white/10 hover:border-cyan-500/40 rounded-3xl p-7 transition">
+        <div class="w-11 h-11 rounded-2xl bg-electric/15 border border-electric/30 text-cyber flex items-center justify-center font-display font-bold text-lg mb-5">03</div>
+        <h3 class="font-display text-xl font-bold text-white">AI Workflow Automation</h3>
+        <p class="text-xs sm:text-sm text-slateText mt-2.5 leading-relaxed">
+          Custom API integrations turning unstructured transaction logs and customer inquiries into actionable executive briefings.
+        </p>
+      </div>
+    </div>
+  </section>
+    <!-- ================= FLAGSHIP PRODUCT: ADEXA KASIR AI ================= -->
+  <section id="adexa-ai" class="bg-surface/60 border-y border-white/10 py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid lg:grid-cols-12 gap-10 items-center">
+        <!-- Left Product Description -->
+        <div class="lg:col-span-6">
+          <span class="inline-block bg-electric/15 border border-electric/40 text-cyan-300 text-[11px] font-bold uppercase tracking-[0.2em] px-3.5 py-1.5 rounded-full">
+            Flagship SaaS Product
+          </span>
+          <h2 class="font-display text-3xl sm:text-5xl font-bold text-white mt-4 leading-tight">
+            Adexa Kasir AI — <span class="brand-gradient-text">Co-Pilot for Merchants.</span>
+          </h2>
+          <p class="text-sm sm:text-base text-slateText mt-4 leading-relaxed">
+            Built by AXIAVONE, <strong>Adexa Kasir AI</strong> goes beyond traditional transaction recording. By integrating Claude AI reasoning into daily POS data, business owners can ask plain-language questions about profit margins, slow-moving SKUs, and peak hour staffing.
+          </p>
+
+          <ul id="architecture" class="mt-6 space-y-3 text-xs sm:text-sm text-slate-200">
+            <li class="flex items-center gap-3">
+              <span class="text-cyber font-bold">✓</span>
+              <span>Automated End-of-Day Financial & Margin Summaries</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-cyber font-bold">✓</span>
+              <span>Natural-Language Inventory & Restock Alerts</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-cyber font-bold">✓</span>
+              <span>Cloud Sync via Next.js, Supabase & Edge Infrastructure</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right Interactive AI Preview Box -->
+        <div class="lg:col-span-6">
+          <div class="bg-obsidian border border-cyan-500/30 rounded-3xl p-5 sm:p-7 shadow-2xl">
+            <div class="flex items-center justify-between pb-4 border-b border-white/10">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+                <span class="text-xs font-mono text-slateText ml-2">adexa-ai-copilot // live-preview</span>
+              </div>
+              <span class="text-[10px] font-bold uppercase tracking-widest text-cyber">AI Active</span>
+            </div>
+
+            <div class="mt-4">
+              <div class="text-[11px] uppercase tracking-wider text-slateText mb-2">Select a Merchant Query:</div>
+              <div class="flex flex-wrap gap-2">
+                <button type="button" onclick="runDemoPrompt('sales')" class="demo-btn bg-electric text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition">
+                  Weekend Margin Brief
+                </button>
+                <button type="button" onclick="runDemoPrompt('stock')" class="demo-btn bg-surfaceLight text-slateText hover:text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition">
+                  Low Stock Risk
+                </button>
+                <button type="button" onclick="runDemoPrompt('promo')" class="demo-btn bg-surfaceLight text-slateText hover:text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition">
+                  Bundle Recommendation
+                </button>
+              </div>
+            </div>
+
+            <div class="mt-5 bg-surface border border-white/10 rounded-2xl p-4 font-mono text-xs leading-relaxed text-slate-200 min-h-[145px]" id="ai-demo-output">
+              <span class="text-cyber font-bold">[Adexa AI Insight]:</span> Weekend revenue rose <strong>+18.4%</strong> driven by iced specialty beverages between 15:00–19:00 WIB. Net margin stands at <strong>64.2%</strong>. Recommended action: pre-batch 25% extra espresso base for Friday afternoon peak.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    <!-- ================= CONTACT & PARTNERSHIP SECTION ================= -->
+  <section id="contact" class="max-w-6xl mx-auto px-4 sm:px-6 py-20">
+    <div class="bg-gradient-to-br from-surface via-surfaceLight to-obsidian border border-white/10 rounded-[2rem] p-6 sm:p-12">
+      <div class="grid lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-5">
+          <div class="text-xs font-bold uppercase tracking-[0.22em] text-cyber">Connect With AXIAVONE</div>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-2">
+            Build With Us or Request Early Access.
+          </h2>
+          <p class="text-sm text-slateText mt-3 leading-relaxed">
+            Interested in deploying <strong>Adexa Kasir AI</strong>, custom web architecture, or technology partnerships? Reach our engineering team directly.
+          </p>
+
+          <div class="mt-6 space-y-3 text-xs sm:text-sm text-slate-300">
+            <div><strong class="text-white">Company:</strong> AXIAVONE Digital Solutions</div>
+            <div><strong class="text-white">Official Email:</strong> hello@axiavone.com</div>
+            <div><strong class="text-white">Region:</strong> Pangkal Pinang, Bangka Belitung, Indonesia</div>
+          </div>
+        </div>
+
+        <form onsubmit="handleContactSubmit(event)" class="lg:col-span-7 bg-obsidian/90 border border-white/10 rounded-3xl p-5 sm:p-7 space-y-4">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-[11px] font-bold uppercase tracking-wider text-slateText mb-1">Your Name *</label>
+              <input type="text" id="contact-name" required placeholder="Alex Pratama" class="w-full bg-surface border border-white/15 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-cyber" />
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold uppercase tracking-wider text-slateText mb-1">Work Email *</label>
+              <input type="email" id="contact-email" required placeholder="name@company.com" class="w-full bg-surface border border-white/15 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-cyber" />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-[11px] font-bold uppercase tracking-wider text-slateText mb-1">Inquiry Topic</label>
+            <select id="contact-topic" class="w-full bg-surface border border-white/15 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-cyber">
+              <option value="Adexa Kasir AI Early Access">Adexa Kasir AI — Early Access</option>
+              <option value="Enterprise Web & Commerce Portal">Custom Web & Commerce Portal</option>
+              <option value="AI Integration & Partnership">AI Integration & Partnership</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-[11px] font-bold uppercase tracking-wider text-slateText mb-1">Project Brief *</label>
+            <textarea id="contact-msg" rows="3" required placeholder="Tell us about your business or technical requirements..." class="w-full bg-surface border border-white/15 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-cyber"></textarea>
+          </div>
+
+          <button type="submit" class="w-full bg-gradient-to-r from-electric to-cyber hover:opacity-95 text-white font-bold py-3.5 rounded-xl text-xs sm:text-sm uppercase tracking-widest shadow-lg transition">
+            Send Inquiry
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="border-t border-white/10 py-10 text-center text-xs text-slateText px-4">
+    <div class="font-display text-lg font-bold tracking-[0.16em] text-white">AXIAVONE</div>
+    <div class="text-[10px] uppercase tracking-[0.25em] text-cyber mt-0.5 mb-3">Digital Solutions</div>
+    <p>AI-Powered Point of Sale & Modern Web Infrastructure • Indonesia</p>
+    <p class="mt-2 opacity-70">© 2026 AXIAVONE Digital Solutions. All rights reserved.</p>
+  </footer>
+
+  <!-- ================= INTERACTIVE SCRIPTS ================= -->
+  <script>
+    function toggleNav() {
+      document.getElementById("mobile-menu").classList.toggle("hidden");
+    }
+
+    const DEMO_RESPONSES = {
+      sales: '<span class="text-cyber font-bold">[Adexa AI Insight]:</span> Weekend revenue rose <strong>+18.4%</strong> driven by iced specialty beverages between 15:00–19:00 WIB. Net margin stands at <strong>64.2%</strong>. Recommended action: pre-batch 25% extra espresso base for Friday afternoon peak.',
+      stock: '<span class="text-amber-400 font-bold">[Inventory Alert]:</span> Oat Milk & Arabica House Blend will deplete within <strong>36 hours</strong> based on current 7-day velocity. Drafted purchase order for supplier restock (est. Rp 1.450.000).',
+      promo: '<span class="text-emerald-400 font-bold">[Growth Strategy]:</span> Customers ordering Signature Latte between 14:00–17:00 show a 41% affinity for Butter Croissant. Creating a <strong>Rp 52.000 Afternoon Pairing</strong> is projected to lift average order value by +14%.'
+    };
+
+    function runDemoPrompt(type) {
+      const box = document.getElementById("ai-demo-output");
+      box.innerHTML = DEMO_RESPONSES[type] || DEMO_RESPONSES.sales;
+      document.querySelectorAll(".demo-btn").forEach(btn => {
+        btn.className = "demo-btn bg-surfaceLight text-slateText hover:text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition";
+      });
+      event.target.className = "demo-btn bg-electric text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition";
+    }
+
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById("contact-name").value.trim();
+      const email = document.getElementById("contact-email").value.trim();
+      const topic = document.getElementById("contact-topic").value;
+      const msg = document.getElementById("contact-msg").value.trim();
+
+      const subject = encodeURIComponent(`[AXIAVONE Inquiry] ${topic} — ${name}`);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nTopic: ${topic}\n\nMessage:\n${msg}`);
+      window.location.href = `mailto:hello@axiavone.com?subject=${subject}&body=${body}`;
+    }
+  </script>
+</body>
+</html>
